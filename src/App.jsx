@@ -22,7 +22,7 @@ import About from "./pages/About";
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
+  Switch
 } from "react-router-dom";
 
 const GridContainer = styled.div`
@@ -100,8 +100,8 @@ function App() {
        
      
 
-{/* 
-        <Routes>
+
+        {/* <Routes>
 
                 <Route exact path="/" element={<Home />}/>
                 

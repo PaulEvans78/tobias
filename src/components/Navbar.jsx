@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import logoWhite_large from '../assets/logoWhite_large.png';
+// import logoHover from '../assets/logoFlag_large.png';
 
 import {
     Link
 } from "react-router-dom";
+
+// import {
+//     Link, Routes, Route
+// } from "react-router-dom";
 
 
 //NAVBAR
@@ -149,6 +154,9 @@ const StyledImageandName = styled.div `
     justify-content: flex-start;
     margin-top: 0.5em;
     
+    /* &:hover{
+       display: none;
+    } */
 
     /* animation-name: fadeIn;
     animation-duration: 8s;
@@ -170,10 +178,9 @@ const StyledImg = styled.img`
     margin-top: 0.5em;
     
 
-     &:hover{
-        /* background: url("../assets/logoFlag_large.png") no-repeat; */
-    /* color: #ccae3f; */
-    }
+     /* &:hover{
+       display: none;
+    } */
 
     @media screen and (max-width: 960px) {
         height: 4em;
@@ -270,6 +277,8 @@ const StyledBurgerBars = styled.div `
 
 
 const Navbar = () => {
+    // const [isShown, setIsShown] = useState(false);
+    // const [visable] = useState(false);
     const [open, setOpen] = useState(false); // Hamburger menu
 
     // const [text] = useTypewriter({
@@ -325,10 +334,35 @@ const links = [
         <StyledNav > 
 
             <StyledImageandName>
+
                 <Link to="/">
+
+                <StyledImg src={logoWhite_large} alt="Tobias Reiner" onClick={() => {setOpen(false);}} />
                     
-                    <StyledImg src={logoWhite_large} alt="Tobias Reiner" onClick={() => {setOpen(false);}} />
+                {/* <StyledImg     onMouseEnter={() => setIsShown(true)}
+                               onMouseLeave={() => setIsShown(false)} 
+                               src={logoWhite_large} alt="Tobias Reiner" onClick={() => {setOpen(false);}} /> */}
+
+                    {/* {isShown && (
+                        
+                            <StyledImg 
+                           
+                               src={logoHover} alt="Tobias Reiner" onClick={() => {setOpen(false);}} />  
+                              
+                        )} */}
+
                         <StyledName>Tobias Reiner 1st Assistant Director
+                            
+                    {/* <StyledImg onMouseEnter={() => setIsShown(true)}
+                               onMouseLeave={() => setIsShown(false)} 
+                               src={logoWhite_large} alt="Tobias Reiner" onClick={() => {setOpen(false);}} />
+
+                    {isShown && (
+                            <StyledImg 
+                               src={logoHover} alt="Tobias Reiner" onClick={() => {setOpen(false);}} />  
+                        )}
+
+                        <StyledName>Tobias Reiner 1st Assistant Director */}
                     
                             {/* <StyledTypewriter>
                                 {text}
