@@ -35,8 +35,14 @@ export const StyledSituationCard = styled.div`
 } */
 `;
 
+export  const StyledImgContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* align-items: center; */
+    width: 100vw;
+`;
 
-   
 export const StyledSituationCardImg = styled.img`
     width: 100%;
     /* height: 290px; */
@@ -44,7 +50,7 @@ export const StyledSituationCardImg = styled.img`
     object-fit: cover;
  `; 
 
-export const StyledInfoContainer = styled.div`
+export const StyledHeaderContainer = styled.div`
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -60,14 +66,29 @@ export const StyledInfoContainer = styled.div`
 `;
 
 export const Styledh3 = styled.h3`
-    text-align: center;
-    margin-top: 0.5em;
-    margin-bottom: 0.25em;
+    /* text-align: ; */
+    /* margin-top: 0.5em; */
+    margin-bottom: 1.5em;
     /* margin-left: 50px; */
     white-space: pre-wrap;
     color: whitesmoke;
     font-family: 'MuseoModerno', cursive;
-    font-size: 52px;
+    font-size: 64px;
+`;
+
+export const StyledInfoContainer = styled.div`
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    /* justify-items: flex-start; */
+    /* justify-self: flex-start; */
+    align-items: flex-start;
+    /* padding: 0px 10px 0px 10px; */
+    max-width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);     
+    /* border-radius: 0px 15px 15px 0px; */
+    margin-bottom: 2.5em;
+    padding: 2em 2em 1em 2em;
 `;
 
 export const StyledCardp = styled.p`

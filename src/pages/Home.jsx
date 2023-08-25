@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import SlideShow from "../components/SlideShowComponent/SlideShow/SlideShow";
+import ImgSlider from "../components/ImgSlider/Slideshow"
+// import SlideShow from "../components/SlideShowComponent/SlideShow/SlideShow";
 // import data from '../components/BackgroundSlider/data/data';
 // import { useTypewriter } from 'react-simple-typewriter';
 // import logoWhite_large from '../assets/logoWhite_large.png';
@@ -10,14 +11,14 @@ import SlideShow from "../components/SlideShowComponent/SlideShow/SlideShow";
 
 
 const StyledHomeContainer = styled.div`
-  grid-area: main;
+  /* grid-area: main; */
   /* max-width: 100vw;  */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-content: center;
-  column-gap: 1em;
+  /* column-gap: 1em; */
 
   /* animation-name: fadeOut;
     animation-duration:3s;
@@ -112,16 +113,9 @@ const Home = () => {
 
             {/* <StyledMyImg src={placeholder} alt="Tobias Reiner"/> */}
 
-                
-                {/* <StyledHomep>
-                         1st AD Tobias
-                </StyledHomep> */}
+                    {/* <SlideShow /> */}
 
-                {/* <StyledTypewriter>
-                        {text}
-                  </StyledTypewriter> */}
-    
-                    <SlideShow />
+                    <ImgSlider />
 
     </StyledHomeContainer>
   

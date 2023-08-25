@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyledAboutMainContainer, StyledImgContainer, StyledAboutImg, StyledHContainer, StyledInfoContainer, Styledp, Styledh3, StyledTypewriter, StyledAboutImgContainer, StyledAboutSmallImages } from './styles';
 import { useTypewriter } from 'react-simple-typewriter';
+// import { useInView } from 'react-intersection-observer';
 // import Fade from "react-reveal/fade";
 
 
@@ -17,6 +18,9 @@ function Card (props) {
         // deleteSpeed: 120,
    });
 
+    // const { ref: myRef, inView: myElementIsVisible } = useInView();
+
+    
     return (
      
         <StyledAboutMainContainer>
@@ -70,6 +74,3 @@ function Card (props) {
 }
 
 export default Card;
-
-
-

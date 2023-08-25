@@ -24,7 +24,8 @@ function Card (props) {
                         </StyledInfoContainer>
 
             </StyledExperienceCard>
-   
+
+                
     )
 }
 

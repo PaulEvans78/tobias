@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar";
 // import ScrollButton from "./components/ScrollButton";
 import Footer from "./components/Footer"; 
 import Home from "./pages/Home";
+// import SlideShow from "./components/SlideShowComponent/SlideShow/SlideShow";
 import Directors from "./pages/Directors";
 import Experience from "./pages/Experience";
 import About from "./pages/About";
@@ -88,7 +89,7 @@ function App() {
 
       <GridContainer >
 
-      {/* <SliderApp/> */}
+      
 
       {/* <ImageSlideApp/> */}
 

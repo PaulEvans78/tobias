@@ -77,17 +77,6 @@
         
         }
 
-    ],
-
-        "slideshow": [
-        
-        {   
-            "id":"8",
-            "mainPic": "slideshow/img1.jpg",
-            "logoImg": "slideshow/logoWhite_large.png"
-        
-        }
-
-]
+    ]
 
 }

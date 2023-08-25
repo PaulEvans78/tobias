@@ -105,7 +105,7 @@ const StyledTelLink = styled.p`
   /* row-gap: 2; */
   color: whitesmoke;
   /* border-radius: 8px; */
-  /* margin-left: 2em; */
+  margin-left: 2em;
   text-shadow: 2px 2px 4px black;
 
   &:hover{

@@ -140,6 +140,8 @@ export const StyledTypewriter = styled.span `
     color: whitesmoke;
     margin-top: 1em;
     margin-bottom: 1.5em;
+
+    
 `;
 
 export  const StyledAboutImgContainer = styled.div`
