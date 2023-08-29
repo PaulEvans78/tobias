@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyledLanguagesCard, StyledLanguagesCardImg, StyledInfoContainer, StyledCardp, Styledh3, } from './styles';
-
+import { StyledLanguagesCard, StyledLanguagesCardImg, StyledImgContainer, StyledHeaderContainer, StyledInfoContainer, StyledCardp, Styledh3, } from './styles';
+import { Fade } from "react-awesome-reveal";
 
 
 
@@ -10,28 +10,24 @@ function Card (props) {
 
     return (
         
-    
-        
             <StyledLanguagesCard>
-                <StyledLanguagesCardImg src={props.mainPic} alt="Walkie Talkies"/>
+
+                <StyledImgContainer>
+
+                    <StyledLanguagesCardImg src={props.mainPic} alt="Walkie Talkies"/>
             
-                    
-
-                        <StyledInfoContainer>
+                        <StyledHeaderContainer>
                             <Styledh3>{props.headline}</Styledh3>
-                            {/* <StyledCardp> 
-                                EUROPE: 	SWEDEN, NORWAY, FINLAND, ESTONIA, DENMARK, GREENLAND, ICELAND; FARØER ISLANDS, GERMANY, FRANCE, SWITZERLAND, ROMANIA, HUNGARY, GREECE, SPAIN, BALEARIC ISLANDS, ITALY, PORTUGAL     
+                        </StyledHeaderContainer>
 
-                                AFRICA: 	SOUTH AFRICA,     
+                </StyledImgContainer>
 
-                                AMERICA: USA, URUGUAY 
-
-                                ASIA:      	THAILAND, 
-</StyledCardp> */}
+                        <Fade>
+                            <StyledInfoContainer>
                                 <StyledCardp>{props.description}</StyledCardp>
-                                    {/* <a href={props.buttonLink}><StyledButton>{props.buttonText}</StyledButton></a> */}
-                        </StyledInfoContainer>
-
+                            </StyledInfoContainer>
+                        </Fade>
+                        
             </StyledLanguagesCard>
    
     )

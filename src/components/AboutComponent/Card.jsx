@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyledAboutMainContainer, StyledImgContainer, StyledAboutImg, StyledHContainer, StyledInfoContainer, Styledp, Styledh3, StyledTypewriter, StyledAboutImgContainer, StyledAboutSmallImages } from './styles';
+import { StyledAboutMainContainer, StyledImgContainer, StyledAboutImg, StyledHContainer, StyledMobContainer, StyledInfoContainer, Styledp, Styledh3, StyledTypewriter, StyledAboutImgContainer, StyledAboutSmallImages } from './styles';
 import { useTypewriter } from 'react-simple-typewriter';
-// import { useInView } from 'react-intersection-observer';
-// import Fade from "react-reveal/fade";
+import { Fade } from "react-awesome-reveal";
 
 
 
@@ -18,7 +17,7 @@ function Card (props) {
         // deleteSpeed: 120,
    });
 
-    // const { ref: myRef, inView: myElementIsVisible } = useInView();
+   
 
     
     return (
@@ -34,13 +33,19 @@ function Card (props) {
 
             </StyledImgContainer>
 
-                    <StyledInfoContainer>
+            <StyledMobContainer>
+                    <Styledh3>About</Styledh3>
+            </StyledMobContainer>
+
+    
+                    <Fade>
+                        <StyledInfoContainer>
 
                         <StyledTypewriter>
                                 {text}
                         </StyledTypewriter>
 
-                            {/* <Fade> */}
+                               
                                 <Styledp>Having done this job for over twenty years now I am still attracted by the vibrant pulse. 
                                     Every project is a new constellation of people, new visions to be fulfilled, new budgetary challenges to be met, new places to discover  
                                     - each one comes with their own particular set of challenges – this is what intrigues me….making ends meet!
@@ -54,19 +59,22 @@ function Card (props) {
                                     – it made learning new languages, experiencing cultural subtleties and adjusting to ever changing situations and circumstances my modus operandi. 
                                     Due to curiosity and coincidence I ended up in the cold northern third of Europe and got stuck… that (!) was an unintended change of plan.
                                 </Styledp>
-                            {/* </Fade> */}
+                            
 
-            </StyledInfoContainer>
+                        </StyledInfoContainer>
+                    </Fade> 
 
-              
-        <StyledAboutImgContainer>
+                    <Fade>
 
-                        <StyledAboutSmallImages src={props.PicOne} alt="Tobias Reiner"/>
-                        <StyledAboutSmallImages src={props.PicTwo} alt="Tobias Reiner"/>
-                        <StyledAboutSmallImages src={props.PicThree} alt="Tobias Reiner"/>
+                        <StyledAboutImgContainer>
 
-                    </StyledAboutImgContainer>
+                            <StyledAboutSmallImages src={props.PicOne} alt="Tobias Reiner"/>
+                            <StyledAboutSmallImages src={props.PicTwo} alt="Tobias Reiner"/>
+                            <StyledAboutSmallImages src={props.PicThree} alt="Tobias Reiner"/>
 
+                        </StyledAboutImgContainer>
+                        
+                    </Fade>
                
 
         </StyledAboutMainContainer>

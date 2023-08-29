@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledExperienceCard, StyledExperienceCardImg, StyledInfoContainer, StyledCardp, Styledh3, } from './styles';
+import { StyledExperienceCard, StyledImgContainer, StyledExperienceCardImg, StyledHContainer, StyledMobContainer, Styledh3 } from './styles';
 
 
 
@@ -13,15 +13,22 @@ function Card (props) {
     
         
             <StyledExperienceCard>
-                <StyledExperienceCardImg src={props.mainPic} alt="Helicopter"/>
-            
-                    
 
-                        <StyledInfoContainer>
-                            <Styledh3>{props.headline}</Styledh3>
-                                <StyledCardp>{props.description}</StyledCardp>
-                                    {/* <a href={props.buttonLink}><StyledButton>{props.buttonText}</StyledButton></a> */}
-                        </StyledInfoContainer>
+                <StyledImgContainer>
+
+                        <StyledExperienceCardImg src={props.mainPic} alt="Helicopter"/>
+            
+                        <StyledHContainer>
+                            <Styledh3>Experience</Styledh3>
+                        </StyledHContainer>
+
+                </StyledImgContainer>
+
+                        <StyledMobContainer>
+                            <Styledh3>Experience</Styledh3>
+                        </StyledMobContainer>
+
+                        
 
             </StyledExperienceCard>
 

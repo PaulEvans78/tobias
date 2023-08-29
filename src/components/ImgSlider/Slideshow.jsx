@@ -1,11 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
-// import { Slide } from './slide';
-// import '../ImgSlider/styles.css';
 import styled from "styled-components";
 import {FiChevronLeft, FiChevronRight} from 'react-icons/fi';
 
-
-// SlArrowRight, SlArrowLeft, 
 
 const StyledSlideContainer = styled.div`
     max-width: 100vw;
@@ -20,11 +16,9 @@ const StyledArrowsContainer = styled.div`
     flex-direction: row;
     align-content: space-between;
     justify-content: space-between;
-    /* align-self: center; */
 `;
 
 const StyledArrowBackground = styled.div`
-    /* max-width: 100vw; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -34,16 +28,9 @@ const StyledArrowBackground = styled.div`
     margin: 20px;
     border: none;
     text-align: center;
-    /* color: #fff; */
     border-radius: 50%;
-    /* display: -webkit-box;
-    display: -ms-flexbox; */
     display: flex;
-    /* -webkit-box-align: center;
-    -ms-flex-align: center; */
     align-items: center;
-    /* -webkit-box-pack: center;
-    -ms-flex-pack: center; */
     justify-content: center;
 `;
 
@@ -59,18 +46,14 @@ const StyledRightArrow = styled.a`
     margin-left: 3px;
 `;
 
-
-// const spanStyle = {
-//     padding: '20px',
-//     background: '#efefef',
-//     color: '#000000'
-//   }
-  
   const divStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundSize: 'cover',
+    backgroundPosition: 'center center',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
     height: '100vh',
     transition: 'ease 2000ms'
     
@@ -88,49 +71,58 @@ const StyledRightArrow = styled.a`
       src: '/slideshow/img3.jpg',
     },
     {
-      src: '/slideshow/img4.jpeg',
+      src: '/slideshow/img4.jpg',
     },
     {
-      src: '/slideshow/img5.JPG',
+      src: '/slideshow/img5.jpg',
     },
     {
-      src: '/slideshow/img6.jpeg',
+      src: '/slideshow/img6.jpg',
     },
     {
-      src: '/slideshow/img7.jpeg',
+      src: '/slideshow/img7.jpg',
     },
     {
-      src: '/slideshow/img8.JPG',
+      src: '/slideshow/img8.jpg',
     },
     {
-      src: '/slideshow/img9.jpeg',
+      src: '/slideshow/img9.jpg',
     },
     {
-      src: '/slideshow/img10.jpeg',
+      src: '/slideshow/img10.jpg',
     },
     {
-      src: '/slideshow/img11.jpeg',
+      src: '/slideshow/img11.jpg',
     },
     {
-      src: '/slideshow/img12.jpeg',
+      src: '/slideshow/img12.jpg',
     },
     {
-      src: '/slideshow/img13.jpeg',
+      src: '/slideshow/img13.jpg',
     },
     {
-      src: '/slideshow/img14.jpeg',
+      src: '/slideshow/img14.jpg',
     },
     {
       src: '/slideshow/img15.jpg',
     },
+    {
+      src: '/slideshow/img16.jpg',
+    },
+    {
+      src: '/slideshow/img17.jpg',
+    }
   ];
   
   const Slideshow = () => {
 
+    
+    
     const timerRef = useRef(null);
 
     const [currentIndex, setCurrentIndex] = useState(0);
   
+   
 
     const goToPrevious = () => {
       const isFirstSlide = currentIndex === 0;

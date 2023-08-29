@@ -5,6 +5,7 @@ import Countries from '../components/CountriesCard/Countries/Countries';
 import Languages from '../components/LanguagesCard/LanguageSkills/Languages';
 import Brands from '../components/BrandsCard/BrandList/Brands';
 import ExperienceNameHolder from '../components/ExperienceCard/ExperienceNameHolder/ExperienceNameHolder';
+import { Fade } from "react-awesome-reveal";
 
 
 // MAIN CONTAINER
@@ -53,11 +54,11 @@ function Experience() {
         <ExperienceMainContainer>
             {/* <Styledh5>Experience</Styledh5> */}
 
-                    <ExperienceNameHolder />
-                    <SituationSkills />
-                    <Countries />
-                    <Languages />
-                    <Brands />
+            <Fade><ExperienceNameHolder /></Fade>
+            <Fade><SituationSkills /></Fade>
+            <Fade><Countries /></Fade>
+            <Fade><Languages /></Fade>
+            <Fade><Brands /></Fade>
 
         </ExperienceMainContainer>
 

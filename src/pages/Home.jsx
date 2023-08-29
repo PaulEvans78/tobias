@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import ImgSlider from "../components/ImgSlider/Slideshow"
+import ImgSlider from "../components/ImgSlider/Slideshow";
+import { Fade } from "react-awesome-reveal";
 // import SlideShow from "../components/SlideShowComponent/SlideShow/SlideShow";
 // import data from '../components/BackgroundSlider/data/data';
 // import { useTypewriter } from 'react-simple-typewriter';
@@ -115,7 +116,7 @@ const Home = () => {
 
                     {/* <SlideShow /> */}
 
-                    <ImgSlider />
+                    <Fade><ImgSlider /></Fade>
 
     </StyledHomeContainer>
   

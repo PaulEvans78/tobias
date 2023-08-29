@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyledSituationCard, StyledSituationCardImg, StyledInfoContainer, StyledCardp, Styledh3, } from './styles';
-
+import { StyledCountriesCard, StyledCountriesCardImg, StyledImgContainer, StyledHeaderContainer, StyledInfoContainer, StyledCardp, Styledh3, } from './styles';
+import { Fade } from "react-awesome-reveal";
 
 
 
@@ -12,27 +12,25 @@ function Card (props) {
         
     
         
-            <StyledSituationCard>
-                <StyledSituationCardImg src={props.mainPic} alt="Lake Sweden"/>
-            
+            <StyledCountriesCard>
+
+                <StyledImgContainer>
                     
+                    <StyledCountriesCardImg src={props.mainPic} alt="Lake Sweden"/>
+            
+                            <StyledHeaderContainer>
+                                <Styledh3>{props.headline}</Styledh3>    
+                            </StyledHeaderContainer>
 
-                        <StyledInfoContainer>
-                            <Styledh3>{props.headline}</Styledh3>
-                            {/* <StyledCardp> 
-                                EUROPE: 	SWEDEN, NORWAY, FINLAND, ESTONIA, DENMARK, GREENLAND, ICELAND; FARØER ISLANDS, GERMANY, FRANCE, SWITZERLAND, ROMANIA, HUNGARY, GREECE, SPAIN, BALEARIC ISLANDS, ITALY, PORTUGAL     
+                </StyledImgContainer>
 
-                                AFRICA: 	SOUTH AFRICA,     
-
-                                AMERICA: USA, URUGUAY 
-
-                                ASIA:      	THAILAND, 
-</StyledCardp> */}
+                        <Fade>
+                            <StyledInfoContainer>
                                 <StyledCardp>{props.description}</StyledCardp>
-                                    {/* <a href={props.buttonLink}><StyledButton>{props.buttonText}</StyledButton></a> */}
-                        </StyledInfoContainer>
+                            </StyledInfoContainer>
+                        </Fade>
 
-            </StyledSituationCard>
+            </StyledCountriesCard>
    
     )
 }

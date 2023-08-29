@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyledBrandsCard, StyledBrandsCardImg, StyledInfoContainer, StyledCardp, Styledh3, } from './styles';
-
+import { StyledBrandsCard, StyledImgContainer, StyledBrandsCardImg, StyledHeaderContainer, StyledInfoContainer, StyledCardp, Styledh3, } from './styles';
+import { Fade } from "react-awesome-reveal";
 
 
 
@@ -10,27 +10,23 @@ function Card (props) {
 
     return (
         
-    
-        
             <StyledBrandsCard>
-                <StyledBrandsCardImg src={props.mainPic} alt="Landrover"/>
-            
+
+                <StyledImgContainer>
                     
-
-                        <StyledInfoContainer>
+                    <StyledBrandsCardImg src={props.mainPic} alt="Landrover"/>
+             
+                        <StyledHeaderContainer>
                             <Styledh3>{props.headline}</Styledh3>
-                            {/* <StyledCardp> 
-                                EUROPE: 	SWEDEN, NORWAY, FINLAND, ESTONIA, DENMARK, GREENLAND, ICELAND; FARØER ISLANDS, GERMANY, FRANCE, SWITZERLAND, ROMANIA, HUNGARY, GREECE, SPAIN, BALEARIC ISLANDS, ITALY, PORTUGAL     
+                        </StyledHeaderContainer>
 
-                                AFRICA: 	SOUTH AFRICA,     
+                </StyledImgContainer>
 
-                                AMERICA: USA, URUGUAY 
-
-                                ASIA:      	THAILAND, 
-</StyledCardp> */}
+                        <Fade>
+                            <StyledInfoContainer>
                                 <StyledCardp>{props.description}</StyledCardp>
-                                    {/* <a href={props.buttonLink}><StyledButton>{props.buttonText}</StyledButton></a> */}
-                        </StyledInfoContainer>
+                            </StyledInfoContainer>
+                        </Fade>
 
             </StyledBrandsCard>
    

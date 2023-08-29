@@ -18,7 +18,7 @@ const StyledNav = styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    justify-items: center;
+    justify-items: flex-end;
     margin-top: 0.5em;
     font-family: 'Lexend', sans-serif;
     font-size: 16px;
@@ -27,9 +27,12 @@ const StyledNav = styled.nav`
     `;
 
 const StyledImageandName = styled.div `
-    width: 70%;
+    width: 50%;
     height: 100%;
-    
+
+    &:hover{
+        opacity: 70%;
+    } 
 `;
 
 const StyledImgContainer = styled.div `
@@ -38,7 +41,7 @@ const StyledImgContainer = styled.div `
 
 const StyledImg = styled.img`
     text-align: center;
-    width: 100px; 
+    width: 90px; 
     margin-left: 3em;
     margin-right: 3em;
     margin-top: 0.5em;
@@ -54,57 +57,71 @@ const StyledIdent = styled.div `
 const StyledName = styled.div `
    
     font-family: 'Delicious Handrawn', cursive;
-    font-size: 64px;
+    font-size: 52px;
     line-height: 40px;
     letter-spacing: 0em;
     color: whitesmoke;
     margin-top: 0.5em;
     text-shadow: 1px 1px 4px black;
     
-    
     /* &:hover{
         background: -webkit-linear-gradient(left, #404040, red , yellow);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent; 
         text-shadow: none;
-  
     } */
+    
+
+    @media screen and (max-width: 1155px) {
+        font-size: 52px;
+}
     `;
 
 const StyledTitle = styled.div `
 
 font-family: 'Delicious Handrawn', cursive;
-font-size: 28px;
+font-size: 24px;
 line-height: 40px;
 letter-spacing: 0em;
 color: whitesmoke;
 margin-top: 0.5em;
 margin-left: 0.5em;
 text-shadow: 1px 1px 4px black;
+
+/* &:hover{
+        background: -webkit-linear-gradient(left, #404040, red , yellow);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        text-shadow: none;
+    } */
 `;
 
 const StyledNavul = styled.ul`
     display: flex;
-    width: 30%;
+    /* background-color: yellow; */
+    /* float: right; */
+    /* text-align: right; */
+    /* position: static; */
+    /* width: 40%; */
     justify-self: flex-end; 
     align-self: flex-start;
-    margin-right: 3em;
+    list-style-type: none;
+    margin-right: 0em;
+    margin-left: 1em;
     `;
 
 const StyledLink = styled(Link)`
     display: flex; 
+    justify-self: flex-end;
     color: white;
     text-decoration: none;
     text-align: right;
     margin: 1em 1em 0em 1em;
     text-shadow: 2px 2px 4px black;
     
-    /* &:hover{
-        background: -webkit-linear-gradient(left, #404040, red , yellow);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        text-shadow: none;
-    } */
+    &:hover{
+        text-decoration: underline;
+    }
 `;
 
 const ExternalStyledLink = styled.a`
@@ -115,12 +132,11 @@ const ExternalStyledLink = styled.a`
     margin: 1em 1em 0em 1em;
     text-shadow: 2px 2px 4px black;
 
-    /* &:hover{
-        background: -webkit-linear-gradient(left, #404040, red , yellow);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        text-shadow: none;
-    } */
+    &:hover{
+        &:hover{
+        text-decoration: underline;
+    }
+    }
     `;
     
     // HAMBURGER
@@ -174,15 +190,15 @@ const links = [
     },
     {
         id: 2,
-        to: "/directors",
-        text: "Directors",
+        to: "/experience",
+        text: "Experience",
         onClick: () => { setOpen(false); },
         isExternal: false
     },
     {
         id: 3,
-        to: "/experience",
-        text: "Experience",
+        to: "/directors",
+        text: "Directors",
         onClick: () => { setOpen(false); },
         isExternal: false
     },
@@ -208,7 +224,7 @@ const links = [
 
             <StyledImageandName>
                 <Link to="/">
-                    
+                  
                     <StyledImgContainer>
                         <StyledImg src={logoWhite_large} alt="Tobias Reiner" onClick={() => {setOpen(false);}} />
                     </StyledImgContainer>
