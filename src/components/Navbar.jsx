@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import logoWhite_large from '../assets/logoWhite_large.png';
+import { Spin as Hamburger } from 'hamburger-react'
 
 import {
     Link
 } from "react-router-dom";
 
-
-//NAVBAR
 
 const StyledNav = styled.nav`
     max-width: 100vw;
@@ -17,22 +16,40 @@ const StyledNav = styled.nav`
     z-index: 100;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    justify-items: flex-end;
+    justify-content: space-evenly;
     margin-top: 0.5em;
     font-family: 'Lexend', sans-serif;
     font-size: 16px;
     line-height: 60px;
     color: whitesmoke;
+
+    @media screen and (max-width: 960px) {
+        font-size: 14px;
+        
+    }
+
+    @media screen and (max-width: 767px) {
+        background-color: #171717;
+        position: relative;
+        justify-items: flex-end;
+        justify-content: space-between;
+        margin-top: 0;
+        height: 80px;
+  }
+
     `;
 
 const StyledImageandName = styled.div `
     width: 50%;
     height: 100%;
 
-    &:hover{
-        opacity: 70%;
-    } 
+    @media screen and (max-width: 960px) {
+        width: 70%;
+  }
+
+    @media screen and (max-width: 355px) {
+        width: 80%; 
+  }
 `;
 
 const StyledImgContainer = styled.div `
@@ -41,10 +58,29 @@ const StyledImgContainer = styled.div `
 
 const StyledImg = styled.img`
     text-align: center;
-    width: 90px; 
-    margin-left: 3em;
-    margin-right: 3em;
-    margin-top: 0.5em;
+    width: 60px; 
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    padding-bottom: 0.75em;
+
+    &:hover{
+        border-bottom: 1px solid white;
+    } 
+
+    @media screen and (max-width: 960px) {
+        margin-right: 0.5em;
+        margin-top: 1em;
+  }
+
+  @media screen and (max-width: 767px) {
+        width: 50px; 
+        margin-top: 0.5em;
+  }
+
+  @media screen and (max-width: 355px) {
+        display: none;
+  }
 `;
 
 const StyledIdent = styled.div `
@@ -52,62 +88,93 @@ const StyledIdent = styled.div `
     width: 50%; 
     height: 100%; 
     text-align: left;
+
+    &:hover{
+        border-bottom: 1px solid white;
+    } 
+
+    @media screen and (max-width: 960px) {
+        width: 70%; 
+    }
+
+    @media screen and (max-width: 355px) {
+        width: 80%; 
+  }
+
 `;
 
 const StyledName = styled.div `
    
     font-family: 'Delicious Handrawn', cursive;
     font-size: 52px;
-    line-height: 40px;
+    line-height: 20px;
     letter-spacing: 0em;
     color: whitesmoke;
     margin-top: 0.5em;
     text-shadow: 1px 1px 4px black;
-    
-    /* &:hover{
-        background: -webkit-linear-gradient(left, #404040, red , yellow);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        text-shadow: none;
-    } */
-    
 
-    @media screen and (max-width: 1155px) {
-        font-size: 52px;
-}
+    @media screen and (max-width: 1030px) {
+        font-size: 48px;
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 32px;
+    }
+
+    @media screen and (max-width: 355px) {
+        margin-left: 0.5em
+  }
+
+    
     `;
 
 const StyledTitle = styled.div `
 
-font-family: 'Delicious Handrawn', cursive;
-font-size: 24px;
-line-height: 40px;
-letter-spacing: 0em;
-color: whitesmoke;
-margin-top: 0.5em;
-margin-left: 0.5em;
-text-shadow: 1px 1px 4px black;
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 24px;
+    line-height: 40px;
+    letter-spacing: 0em;
+    color: whitesmoke;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    text-shadow: 1px 1px 4px black;
 
-/* &:hover{
-        background: -webkit-linear-gradient(left, #404040, red , yellow);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        text-shadow: none;
-    } */
+    @media screen and (max-width: 767px) {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    @media screen and (max-width: 355px) {
+        margin-left: 1.5em
+    }
 `;
 
 const StyledNavul = styled.ul`
+    width: 50%;
     display: flex;
-    /* background-color: yellow; */
-    /* float: right; */
-    /* text-align: right; */
-    /* position: static; */
-    /* width: 40%; */
-    justify-self: flex-end; 
-    align-self: flex-start;
+    justify-content: flex-end; 
+    justify-items: flex-end;
     list-style-type: none;
-    margin-right: 0em;
+    margin-right: 2em;
     margin-left: 1em;
+
+    @media screen and (max-width: 767px) {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: 70px;
+        right: 0;
+        height: 70vh;
+        width: 100vw;
+        background-color: #171717;
+        transform: translateX(800px);
+        transition: 0.5s ease-in-out; 
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0em;
+    }
+
     `;
 
 const StyledLink = styled(Link)`
@@ -116,11 +183,18 @@ const StyledLink = styled(Link)`
     color: white;
     text-decoration: none;
     text-align: right;
-    margin: 1em 1em 0em 1em;
+    margin: 0em 2em 1em 0em;
     text-shadow: 2px 2px 4px black;
     
     &:hover{
         text-decoration: underline;
+    }
+    
+
+    @media screen and (max-width: 767px) {
+        justify-content: center;
+        margin: 0em 0em 0em 0em;
+        font-size: 28px;
     }
 `;
 
@@ -129,55 +203,36 @@ const ExternalStyledLink = styled.a`
     color: whitesmoke;
     text-decoration: none;
     text-align: right;
-    margin: 1em 1em 0em 1em;
+    margin: 0em 0em 1em 0em;
     text-shadow: 2px 2px 4px black;
 
     &:hover{
-        &:hover{
         text-decoration: underline;
     }
+
+    @media screen and (max-width: 767px) {
+        justify-content: center;
+        font-size: 28px;
     }
+
     `;
     
     // HAMBURGER
 
 const StyledHamburger = styled.div`
-    grid-area: navbar;
     display: none;
 
 @media screen and (max-width: 767px) {
     display: flex;
-    justify-content: flex-end;
-    margin-top: 2em;
+    justify-content: center;
+    margin-top: 1em;
     margin-right: 2em;
 }
 `;
 
-const StyledBurgerBars = styled.div `
-    width: 2rem;
-    height: 0.25rem;
-    margin-bottom: 0.25rem;
-    border-radius: 10px;
-    background-color: whitesmoke;
-    transform-origin: 1px;
-    transition: all 0.2s linear;
-`;
-
-//NAVBAR
-// https://www.youtube.com/watch?v=ZlDASfsL7FI
-
 
 const Navbar = () => {
     const [open, setOpen] = useState(false); // Hamburger menu
-
-    // const [text] = useTypewriter({
-    //     words: ['UX/UI', 'Frontend Developer', 'Cinematographer', 'photographer', 'Creative'],
-    //     loop: {},
-    //     typeSpeed: 120,
-    //     deleteSpeed: 120,
-    // });
-
-    
 
 const links = [
     
@@ -250,10 +305,11 @@ const links = [
 
             </StyledNavul>
 
-            
+            <StyledHamburger>
             <div onClick={() => setOpen(!open)}>
                 <Hamburger />
                 </div>
+                </StyledHamburger>
             
             
         </StyledNav>
@@ -261,24 +317,5 @@ const links = [
 
     );
 }
-
-
-
-
-
-//HAMBURGER MENU
-function Hamburger() {
-
-    return (  
-      <StyledHamburger>
-           <div>
-           <StyledBurgerBars className="burger burger1"></StyledBurgerBars>
-           <StyledBurgerBars className="burger burger2"></StyledBurgerBars>
-           <StyledBurgerBars className="burger burger3"></StyledBurgerBars>
-          </div>
-          
-      </StyledHamburger>
-    );
-  }
 
 export default Navbar;

@@ -5,12 +5,18 @@ overflowY: scroll;
 height: 100px;
 `;
 
+
+
 export const Button = styled.div`
+/* background-color:  rgba(255, 255, 255); */
 position: fixed;
-width: 100%;
-left: 47%;
-top: 650px;
-height: 60px;
+text-align: center;
+/* margin-top: 8px; */
+/* width: 80px; */
+height: 80px;
+border-radius: 50%;
+left: 48%;
+top: 720px;
 font-size: 3rem;
 z-index: 1;
 cursor: pointer;

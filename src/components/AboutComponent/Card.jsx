@@ -2,6 +2,7 @@ import React from 'react';
 import { StyledAboutMainContainer, StyledImgContainer, StyledAboutImg, StyledHContainer, StyledMobContainer, StyledInfoContainer, Styledp, Styledh3, StyledTypewriter, StyledAboutImgContainer, StyledAboutSmallImages } from './styles';
 import { useTypewriter } from 'react-simple-typewriter';
 import { Fade } from "react-awesome-reveal";
+import ScrollButton from '../ScrollButton/ScrollButton';
 
 
 
@@ -76,7 +77,7 @@ function Card (props) {
                         
                     </Fade>
                
-
+                    <ScrollButton />
         </StyledAboutMainContainer>
     );
 }

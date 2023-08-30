@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {SlArrowDown} from 'react-icons/sl';
-import { Button } from './Styles';
+import { Button} from './Styles';
+// import styled from 'styled-components';
   
 
 
@@ -18,19 +19,16 @@ const ScrollToTop = () => {
           }
       });
   }, []);
+  
   const scrollToBottom = () => {
     window.scrollTo({
       top: document.documentElement.scrollHeight,
       behavior: 'smooth',
     });
   };
-  // const goToTop = () => {
-  //     window.scrollTo({
-  //         top: 0,
-  //         behavior: "smooth",
-  //     });
-  // };
+  
   return (
+    // <StyledButtonContainer>
       <Button>
           {" "}
           {showTopBtn && (
@@ -40,6 +38,7 @@ const ScrollToTop = () => {
               />
           )}{" "}
       </Button>
+    // </StyledButtonContainer>
   );
 };
 export default ScrollToTop;

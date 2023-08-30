@@ -55,9 +55,11 @@ const StyledRightArrow = styled.a`
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
     height: '100vh',
-    transition: 'ease 2000ms'
+    transition: 'ease 2000ms',
     
-    
+    // @media screen and (max-width: 767px) {
+      
+    // }
 
   }
   const slideImages = [

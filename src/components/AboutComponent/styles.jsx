@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const StyledAboutMainContainer = styled.div`
     max-width: 100vw;
-    /* overflow-x: hidden; */
 `;
 
 export  const StyledImgContainer = styled.div`
@@ -25,12 +24,11 @@ export  const StyledHContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
     width: 100vw;
     min-width: 100vw;
     background-color: rgba(0, 0, 0, 0.8);  
     padding: 2em 0em 2em 0em;
-    margin-bottom: 8em;
+    margin-bottom: 10em;
     overflow: hidden;
 
     animation-name: fadeIn;

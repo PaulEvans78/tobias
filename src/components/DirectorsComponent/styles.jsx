@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-
-// MAIN CONTAINER
-
-
-
 export const StyledDirectorsMainContainer = styled.div`
     max-width: 100vw;
 `;
@@ -54,7 +49,6 @@ export  const StyledHContainer = styled.div`
 `;
 
 export  const Styledh3 = styled.h3`
-    text-align: left;
     margin-top: 0.25em;
     margin-bottom: 0.25em;
     white-space: pre-wrap;

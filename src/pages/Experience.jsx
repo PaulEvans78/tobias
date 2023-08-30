@@ -12,21 +12,11 @@ import { Fade } from "react-awesome-reveal";
 
 const ExperienceMainContainer = styled.div`
      grid-area: main;
-     /* background-color: blue; */
      max-width: 100vw;
-     /* margin-top: 3em; */
      display: flex;
      flex-direction: column;
      align-items: center;
-     /* row-gap: 3em; */
- 
-     /* @media screen and (max-width: 960px) {
-         row-gap: 1em;
-         margin-top: 0em;
-     } */
 `;
-
-// GENERAL STYLING
 
 const Styledh5 = styled.h5`
     margin: 1em 0em 2em 2em;
@@ -36,12 +26,6 @@ const Styledh5 = styled.h5`
     font-family: 'lexend';
     font-size: 28px;
     color: black;
-   
-    /* @media screen and (max-width: 960px) {
-        margin-left: 0em;
-        margin-bottom: 0em;
-
-    } */
 `;
 
 
@@ -49,12 +33,23 @@ const Styledh5 = styled.h5`
 
 function Experience() {
 
+    // const situation = useRef(null);
+    // const countries = useRef(null);
+    // const languages = useRef(null);
+    // const brands = useRef(null);
+
+    // const scrollToSection = (elementRef) => {
+    //     window.scrollTo({
+    //         top: elementRef.current.offsetTop,
+    //         behaviour: 'smooth'
+    //     })
+    // }
+
     return (
        
         <ExperienceMainContainer>
-            {/* <Styledh5>Experience</Styledh5> */}
 
-            <Fade><ExperienceNameHolder /></Fade>
+            <Fade><ExperienceNameHolder/></Fade>
             <Fade><SituationSkills /></Fade>
             <Fade><Countries /></Fade>
             <Fade><Languages /></Fade>

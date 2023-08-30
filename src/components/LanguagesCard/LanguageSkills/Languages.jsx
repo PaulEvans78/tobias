@@ -21,7 +21,7 @@ const Languages = () => {
 
     return (
         <>
-             {languagesData?.map(languages => <Card key={languages.id} {...languages} />)}  {/*Question mark */}
+             {languagesData?.map(languages => <Card key={languages.id} {...languages} />)} 
         </>
 
     )
