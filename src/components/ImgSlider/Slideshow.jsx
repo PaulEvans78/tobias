@@ -16,6 +16,10 @@ const StyledArrowsContainer = styled.div`
     flex-direction: row;
     align-content: space-between;
     justify-content: space-between;
+
+    @media screen and (max-width: 767px) {
+      top: 35%;
+    }
 `;
 
 const StyledArrowBackground = styled.div`
@@ -46,7 +50,8 @@ const StyledRightArrow = styled.a`
     margin-left: 3px;
 `;
 
-  const divStyle = {
+
+const divStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -56,12 +61,10 @@ const StyledRightArrow = styled.a`
     backgroundAttachment: 'fixed',
     height: '100vh',
     transition: 'ease 2000ms',
-    
-    // @media screen and (max-width: 767px) {
-      
-    // }
-
   }
+
+  
+
   const slideImages = [
     {
       src: '/slideshow/img1.jpg',
@@ -148,6 +151,15 @@ const StyledRightArrow = styled.a`
 
       return () => clearTimeout(timerRef.current);
     }, [goToNext]);
+
+    const isMobile = window.innerWidth <= 767;
+
+    const dynamicStyle = {
+      ...divStyle,
+      backgroundImage: `url(${slideImages[currentIndex].src})`,
+      ...(isMobile && { height: '90vh' }), // Apply height change for mobile screens
+    };
+  
     
       return (
         <StyledSlideContainer>
@@ -172,7 +184,7 @@ const StyledRightArrow = styled.a`
             
             </StyledArrowsContainer>
             
-                  <div style={{ ...divStyle, 'backgroundImage': `url(${slideImages[currentIndex].src})` }}></div>
+            <div style={dynamicStyle}></div>
 
         </StyledSlideContainer>
       )

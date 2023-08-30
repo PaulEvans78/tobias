@@ -34,6 +34,7 @@ const StyledNav = styled.nav`
         justify-items: flex-end;
         justify-content: space-between;
         margin-top: 0;
+        padding-top: 0.5em;
         height: 80px;
   }
 
