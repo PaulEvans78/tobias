@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledDirectorsMainContainer, StyledImgContainer, StyledDirectorsImg, StyledHContainer, StyledMobContainer, StyledInfoContainer, Styledp, Styledh3} from './styles';
+import { StyledDirectorsMainContainer, StyledImgContainer, StyledDirectorsImg, StyledHContainer, StyledMobContainer, StyledInfoContainer, Styledp, Styledh2} from './styles';
 import { Fade } from "react-awesome-reveal";
 
 
@@ -16,14 +16,14 @@ function Card (props) {
                 <StyledDirectorsImg src={props.mainPic} alt="Russian Dolls"/>
 
                 <StyledHContainer>
-                    <Styledh3>Directors</Styledh3>
+                    <Styledh2>Directors</Styledh2>
                 </StyledHContainer>
 
             </StyledImgContainer>
 
 
             <StyledMobContainer>
-                    <Styledh3>Directors</Styledh3>
+                    <Styledh2>Directors</Styledh2>
             </StyledMobContainer>
 
 

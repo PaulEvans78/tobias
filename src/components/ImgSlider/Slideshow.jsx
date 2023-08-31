@@ -26,6 +26,7 @@ const StyledArrowBackground = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     height: 50px;
     background: rgba(255, 255, 255, 0.6);
     width: 50px;
@@ -33,9 +34,6 @@ const StyledArrowBackground = styled.div`
     border: none;
     text-align: center;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 `;
 
 const StyledLeftArrow = styled.a`
@@ -127,19 +125,38 @@ const divStyle = {
 
     const [currentIndex, setCurrentIndex] = useState(0);
   
-   
+    const shuffledImages = shuffleArray(slideImages);
 
+    //Random
+    
     const goToPrevious = () => {
       const isFirstSlide = currentIndex === 0;
-      const newIndex = isFirstSlide ? slideImages.length - 1 : currentIndex - 1;
+      const newIndex = isFirstSlide ? shuffledImages.length - 1 : currentIndex - 1;
       setCurrentIndex(newIndex);
     };
 
     const goToNext = () => {
-      const isLastSlide = currentIndex === slideImages.length - 1;
+      const isLastSlide = currentIndex === shuffledImages.length - 1;
       const newIndex = isLastSlide ? 0 : currentIndex + 1;
       setCurrentIndex(newIndex);
     };
+
+    // Previous Slide
+
+    // const goToPrevious = () => {
+    //   const isFirstSlide = currentIndex === 0;
+    //   const newIndex = isFirstSlide ? slideImages.length - 1 : currentIndex - 1;
+    //   setCurrentIndex(newIndex);
+    // };
+
+
+    // Next Slide
+
+    // const goToNext = () => {
+    //   const isLastSlide = currentIndex === slideImages.length - 1;
+    //   const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    //   setCurrentIndex(newIndex);
+    // };
 
     useEffect(() => {
       if (timerRef.current) {
@@ -188,6 +205,16 @@ const divStyle = {
 
         </StyledSlideContainer>
       )
+  };
+
+  // Function to shuffle an array
+function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
+  return shuffled;
+}
 
   export default Slideshow;

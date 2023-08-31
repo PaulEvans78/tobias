@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import logoWhite_large from '../assets/logoWhite_large.png';
 import { Spin as Hamburger } from 'hamburger-react'
-
-import {
-    Link
-} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 
 const StyledNav = styled.nav`
@@ -41,8 +38,8 @@ const StyledNav = styled.nav`
     `;
 
 const StyledImageandName = styled.div `
-    width: 50%;
-    height: 100%;
+        width: 50%;
+        height: 100%;
 
     @media screen and (max-width: 960px) {
         width: 70%;
@@ -54,20 +51,20 @@ const StyledImageandName = styled.div `
 `;
 
 const StyledImgContainer = styled.div `
-    float: left;
+        float: left;
 `;
 
 const StyledImg = styled.img`
-    text-align: center;
-    width: 60px; 
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-top: 1em;
-    padding-bottom: 0.75em;
+        text-align: center;
+        width: 60px; 
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-top: 1em;
+        padding-bottom: 0.75em;
 
-    &:hover{
+    /* &:hover{
         border-bottom: 1px solid white;
-    } 
+    }  */
 
     @media screen and (max-width: 960px) {
         margin-right: 0.5em;
@@ -90,9 +87,9 @@ const StyledIdent = styled.div `
     height: 100%; 
     text-align: left;
 
-    &:hover{
+    /* &:hover{
         border-bottom: 1px solid white;
-    } 
+    }  */
 
     @media screen and (max-width: 960px) {
         width: 70%; 
@@ -104,13 +101,14 @@ const StyledIdent = styled.div `
 
 `;
 
-const StyledName = styled.div `
+const StyledName = styled.h1 `
    
     font-family: 'Delicious Handrawn', cursive;
     font-size: 52px;
     line-height: 20px;
     letter-spacing: 0em;
     color: whitesmoke;
+    margin-bottom: 0;
     margin-top: 0.5em;
     text-shadow: 1px 1px 4px black;
 
@@ -191,6 +189,9 @@ const StyledLink = styled(Link)`
         text-decoration: underline;
     }
     
+    &.active {
+    text-decoration: underline;
+  }
 
     @media screen and (max-width: 767px) {
         justify-content: center;
@@ -210,6 +211,10 @@ const ExternalStyledLink = styled.a`
     &:hover{
         text-decoration: underline;
     }
+
+    &.active {
+    text-decoration: underline;
+  }
 
     @media screen and (max-width: 767px) {
         justify-content: center;
@@ -233,7 +238,14 @@ const StyledHamburger = styled.div`
 
 
 const Navbar = () => {
+    const location = useLocation();
     const [open, setOpen] = useState(false); // Hamburger menu
+    const [activePage, setActivePage] = useState(location.pathname);
+    const [hamburgerActive, setHamburgerActive] = useState(false); // Hamburger menu
+
+    useEffect(() => {
+        setActivePage(location.pathname);
+    }, [location]);
 
 const links = [
     
@@ -300,15 +312,15 @@ const links = [
 
 
             <StyledNavul style={{transform: open ? "translateX(0px)" : ""}}>
-                 {links.map(link => link.isExternal ? <ExternalStyledLink key={link.id} href={link.href}>{link.text}</ExternalStyledLink> : <StyledLink onClick={link.onClick} to={link.to} key={link.id}>{link.text}</StyledLink>)}
-
+                 {/* {links.map(link => link.isExternal ? <ExternalStyledLink key={link.id} href={link.href} className={activePage === link.to ? "active" : ""}>{link.text}</ExternalStyledLink> : <StyledLink onClick={() => {setOpen(false); setHamburgerActive(false); link.onClick();}} to={link.to} key={link.id} className={activePage === link.to ? "active" : ""}>{link.text}</StyledLink>)} */}
+                 {links.map(link => link.isExternal ? <ExternalStyledLink key={link.id} href={link.href} className={activePage === link.to ? "active" : ""} onClick={() => { setOpen(false); setHamburgerActive(false); link.onClick(); }}> {link.text} </ExternalStyledLink> : <StyledLink onClick={() => {setOpen(false); setHamburgerActive(false); link.onClick();}} to={link.to} key={link.id} className={activePage === link.to ? "active" : ""}>{link.text}</StyledLink>)}
                 
 
             </StyledNavul>
 
             <StyledHamburger>
-            <div onClick={() => setOpen(!open)}>
-                <Hamburger />
+            <div onClick={() => { setOpen(!open); setHamburgerActive(!hamburgerActive); }}>
+                <Hamburger toggled={hamburgerActive} />
                 </div>
                 </StyledHamburger>
             

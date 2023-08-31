@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledCountriesCard, StyledCountriesCardImg, StyledImgContainer, StyledHeaderContainer, StyledInfoContainer, StyledCardp, Styledh3, } from './styles';
+import { StyledCountriesCard, StyledCountriesCardImg, StyledImgContainer, StyledHeaderContainer, StyledInfoContainer, StyledCardp, Styledh2, } from './styles';
 import { Fade } from "react-awesome-reveal";
 
 
@@ -19,7 +19,7 @@ function Card (props) {
                     <StyledCountriesCardImg src={props.mainPic} alt="Lake Sweden"/>
             
                             <StyledHeaderContainer>
-                                <Styledh3>{props.headline}</Styledh3>    
+                                <Styledh2>{props.headline}</Styledh2>    
                             </StyledHeaderContainer>
 
                 </StyledImgContainer>

@@ -1,8 +1,8 @@
-import React from 'react';
-import { StyledAboutMainContainer, StyledImgContainer, StyledAboutImg, StyledHContainer, StyledMobContainer, StyledInfoContainer, Styledp, Styledh3, StyledTypewriter, StyledAboutImgContainer, StyledAboutSmallImages } from './styles';
+import React, { useState, useRef, useEffect } from 'react';
+import { StyledAboutMainContainer, StyledImgContainer, StyledAboutImg, StyledHContainer, StyledMobContainer, StyledInfoContainer, Styledp, Styledh2, StyledTypewriter, StyledAboutImgContainer, StyledAboutSmallImages, StyledButton, StyledButtonBackground } from './styles';
 import { useTypewriter } from 'react-simple-typewriter';
 import { Fade } from "react-awesome-reveal";
-import ScrollButton from '../ScrollButton/ScrollButton';
+import {SlArrowDown} from 'react-icons/sl';
 
 
 
@@ -11,6 +11,17 @@ import ScrollButton from '../ScrollButton/ScrollButton';
 
 function Card (props) {
 
+    
+    // const [startTyping, setStartTyping] = useState(false);
+
+    // useTypewriter({
+    //     words: ['1st AD Tobias - Saving the world one commercial at a time'],
+    //     typeSpeed: 75,
+    //     onTypeEnd: () => {
+    //         setTypingComplete(true);
+    //     },
+    // });
+
     const [text] = useTypewriter({
         words: ['1st AD Tobias - Saving the world one commercial at a time'],
         // loop: {},
@@ -18,33 +29,79 @@ function Card (props) {
         // deleteSpeed: 120,
    });
 
-   
+
+   const section1 = useRef();
+   const section2 = useRef();
+   const section3 = useRef();
+
+   const scrollTo = (section) => {
+    
+    section.current.scrollIntoView({ behavior:"smooth" });
+   };
+
+
+//    useEffect(() => {
+//     const options = {
+//         root: null,
+//         rootMargin: '0px',
+//         threshold: 0.5, 
+//     };
+
+//     const observer = new IntersectionObserver((entries) => {
+//         entries.forEach((entry) => {
+//             if (entry.isIntersecting && !startTyping) {
+//                 setStartTyping(true);
+//             }
+//         });
+//     }, options);
+
+//     if (section2.current) {
+//         observer.observe(section2.current);
+//     }
+
+//     return () => {
+//         if (section2.current) {
+//             observer.unobserve(section2.current);
+//         }
+//     };
+// }, [startTyping]);
 
     
     return (
      
         <StyledAboutMainContainer>
-
-            <StyledImgContainer>
+            <div ref={section1}>       
+            <StyledImgContainer scrollTo={scrollTo} goToSectionRef={section2}>
                 <StyledAboutImg src={props.mainPic} alt="Tobias Reiner"/>
 
                     <StyledHContainer>
-                        <Styledh3>About</Styledh3>
+                        <Styledh2>About</Styledh2>
                     </StyledHContainer>
 
             </StyledImgContainer>
-
+            </div>
             <StyledMobContainer>
-                    <Styledh3>About</Styledh3>
+                    <Styledh2>About</Styledh2>
             </StyledMobContainer>
 
     
                     <Fade>
-                        <StyledInfoContainer>
+                        <div ref={section2}>
+                        <StyledInfoContainer  scrollTo={scrollTo} goToSectionRef={section3}>
 
                         <StyledTypewriter>
                                 {text}
+                                {/* {startTyping && (
+                            <useTypewriter
+                                words={['1st AD Tobias - Saving the world one commercial at a time']}
+                                cursor
+                                cursorStyle="_"
+                                typeSpeed={75}
+                            />
+                        )}
+                                 */}
                         </StyledTypewriter>
+                        
 
                                
                                 <Styledp>Having done this job for over twenty years now I am still attracted by the vibrant pulse. 
@@ -63,10 +120,11 @@ function Card (props) {
                             
 
                         </StyledInfoContainer>
+                        </div>
                     </Fade> 
 
                     <Fade>
-
+                    <div ref={section3}>
                         <StyledAboutImgContainer>
 
                             <StyledAboutSmallImages src={props.PicOne} alt="Tobias Reiner"/>
@@ -74,10 +132,16 @@ function Card (props) {
                             <StyledAboutSmallImages src={props.PicThree} alt="Tobias Reiner"/>
 
                         </StyledAboutImgContainer>
-                        
+                        </div>
                     </Fade>
-               
-                    <ScrollButton />
+                   
+                    <StyledButtonBackground>
+               <StyledButton onClick={() => scrollTo(goToSectionRef)}>
+                    <SlArrowDown />
+                    </StyledButton>
+                    </StyledButtonBackground>
+                
+
         </StyledAboutMainContainer>
     );
 }

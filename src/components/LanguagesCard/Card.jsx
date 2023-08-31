@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledLanguagesCard, StyledLanguagesCardImg, StyledImgContainer, StyledHeaderContainer, StyledInfoContainer, StyledCardp, Styledh3, } from './styles';
+import { StyledLanguagesCard, StyledLanguagesCardImg, StyledImgContainer, StyledHeaderContainer, StyledInfoContainer, StyledCardp, Styledh2, } from './styles';
 import { Fade } from "react-awesome-reveal";
 
 
@@ -17,7 +17,7 @@ function Card (props) {
                     <StyledLanguagesCardImg src={props.mainPic} alt="Walkie Talkies"/>
             
                         <StyledHeaderContainer>
-                            <Styledh3>{props.headline}</Styledh3>
+                            <Styledh2>{props.headline}</Styledh2>
                         </StyledHeaderContainer>
 
                 </StyledImgContainer>

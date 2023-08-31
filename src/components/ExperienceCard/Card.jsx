@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledExperienceCard, StyledImgContainer, StyledExperienceCardImg, StyledHContainer, StyledMobContainer, Styledh3 } from './styles';
+import { StyledExperienceCard, StyledImgContainer, StyledExperienceCardImg, StyledHContainer, StyledMobContainer, Styledh2 } from './styles';
 
 
 
@@ -19,13 +19,13 @@ function Card (props) {
                         <StyledExperienceCardImg src={props.mainPic} alt="Helicopter"/>
             
                         <StyledHContainer>
-                            <Styledh3>Experience</Styledh3>
+                            <Styledh2>Experience</Styledh2>
                         </StyledHContainer>
 
                 </StyledImgContainer>
 
                         <StyledMobContainer>
-                            <Styledh3>Experience</Styledh3>
+                            <Styledh2>Experience</Styledh2>
                         </StyledMobContainer>
 
                         

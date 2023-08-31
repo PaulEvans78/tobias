@@ -7,12 +7,18 @@ body {
 
 a { color: inherit; text-decoration: none; } 
 
-/* a:active {
-  text-decoration: underline;
-} */
+
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
+/* h1 52 Delicious Handrawn, cursive
+h2 48 MuseoModerno, cursive
+h3 32 Typewriter Delicious Handrawn, cursive
+h4 24 px Title Delicious Handrawn, cursive
+p 16 Lexend
+micro text 12px Lexend
+
+28 px menu mobile Lexend */

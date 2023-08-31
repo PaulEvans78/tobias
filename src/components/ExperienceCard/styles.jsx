@@ -49,14 +49,14 @@ export  const StyledHContainer = styled.div`
     }
 `;
 
-export  const Styledh3 = styled.h3`
+export  const Styledh2 = styled.h2`
     text-align: left;
     margin-top: 0.25em;
     margin-bottom: 0.25em;
     white-space: pre-wrap;
     color: whitesmoke;
     font-family: 'MuseoModerno', cursive;
-    font-size: 52px;
+    font-size: 48px;
     letter-spacing: 0.5rem;
 
     @media screen and (max-width: 700px) {

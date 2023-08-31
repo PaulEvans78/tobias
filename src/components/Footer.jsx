@@ -168,7 +168,7 @@ const StyledCopyRight = styled.div`
   text-shadow: 2px 2px 4px black;
 
   @media screen and (max-width: 767px) {
-    font-size: 10px;
+    font-size: 8px;
     margin-left: 1em;
     margin-right: 1em;
     }

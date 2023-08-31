@@ -48,13 +48,13 @@ export  const StyledHContainer = styled.div`
     }
 `;
 
-export  const Styledh3 = styled.h3`
+export  const Styledh2 = styled.h2`
     margin-top: 0.25em;
     margin-bottom: 0.25em;
     white-space: pre-wrap;
     color: whitesmoke;
     font-family: 'MuseoModerno', cursive;
-    font-size: 52px;
+    font-size: 48px;
     letter-spacing: 0.5rem;
 `;
 
@@ -76,7 +76,7 @@ export  const StyledInfoContainer = styled.div`
     font-size: 16px;
     line-height: 2rem;
     overflow: hidden;
-    margin-bottom: 4em;
+    margin-bottom: 8em;
 
     @media screen and (max-width: 960px) {
         padding: 2em;

@@ -41,16 +41,16 @@ export const StyledHeaderContainer = styled.div`
     }
 `;
 
-export const Styledh3 = styled.h3`
+export const Styledh2 = styled.h2`
     margin-bottom: 0em;
     white-space: pre-wrap;
     color: whitesmoke;
     font-family: 'MuseoModerno', cursive;
-    font-size: 72px;
+    font-size: 48px;
 
     @media screen and (max-width: 960px) {
         margin-bottom: 0em;
-        font-size: 52px;
+        /* font-size: 52px; */
     }
 
     @media screen and (max-width: 700px) {

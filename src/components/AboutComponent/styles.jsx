@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 
+
 export const StyledAboutMainContainer = styled.div`
     max-width: 100vw;
 `;
@@ -50,14 +51,14 @@ export  const StyledHContainer = styled.div`
     }
 `;
 
-export  const Styledh3 = styled.h3`
+export  const Styledh2 = styled.h2`
     text-align: left;
     margin-top: 0.25em;
     margin-bottom: 0.25em;
     white-space: pre-wrap;
     color: whitesmoke;
     font-family: 'MuseoModerno', cursive;
-    font-size: 52px;
+    font-size: 48px;
     letter-spacing: 0.5rem;
 `;
 
@@ -80,6 +81,7 @@ export  const StyledInfoContainer = styled.div`
     font-size: 16px;
     line-height: 1.5rem;
     overflow: hidden;
+    scroll-snap-align: center;
 
     @media screen and (max-width: 960px) {
         padding: 2em;
@@ -124,7 +126,7 @@ export  const StyledAboutImgContainer = styled.div`
     align-items: center;
     width: 100%;
     margin-top: 2em;
-    margin-bottom: 6em;
+    margin-bottom: 10em;
 
     @media screen and (max-width: 700px) {
         flex-direction: column;
@@ -142,4 +144,57 @@ export  const StyledAboutSmallImages = styled.img`
         width: 80%;
         
     }
+`;
+
+export const StyledButtonBackground = styled.div`
+    position: fixed;
+    left: 46%;
+    bottom: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.6);
+    width: 60px;
+    margin: 20px;
+    border: none;
+    text-align: center;
+    border-radius: 50%;
+`;
+
+export const StyledButton = styled.a`
+    /* background-color: #ffffff8d; */
+    /* border-radius: 50px; */
+
+    text-align: center;
+    height: 80px;
+    /* border-radius: 50%; */
+    /* left: 48%;
+    bottom: 50px; */
+    font-size: 2.5em;
+    z-index: 1;
+    cursor: pointer;
+    color: black;
+    margin-top: 1em;
+
+/* @keyframes movebtn {
+  0%{
+    transform: translateY(0px);
+  }
+  25%{
+    transform: translateY(20px);
+  }
+  50%{
+    transform: translateY(0px);
+  }
+  75%{
+    transform: translateY(-20px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+} */
+
 `;
