@@ -120,25 +120,32 @@ const divStyle = {
   
   const Slideshow = () => {
 
-    
-    
     const timerRef = useRef(null);
-
     const [currentIndex, setCurrentIndex] = useState(0);
   
-    const shuffledImages = shuffleArray(slideImages);
-
-    //Random
-    
-    const goToPrevious = () => {
-      const isFirstSlide = currentIndex === 0;
-      const newIndex = isFirstSlide ? shuffledImages.length - 1 : currentIndex - 1;
+    const shuffleImages = () => {
+      const newIndex = Math.floor(Math.random() * slideImages.length);
       setCurrentIndex(newIndex);
     };
 
+    //Random
+    
+    useEffect(() => {
+      shuffleImages(); // Initial shuffle
+      timerRef.current = setInterval(() => {
+        shuffleImages(); // Shuffle images every 4 seconds
+      }, 4000);
+  
+      return () => clearInterval(timerRef.current);
+    }, []);
+  
+    const goToPrevious = () => {
+      const newIndex = (currentIndex - 1 + slideImages.length) % slideImages.length;
+      setCurrentIndex(newIndex);
+    };
+  
     const goToNext = () => {
-      const isLastSlide = currentIndex === shuffledImages.length - 1;
-      const newIndex = isLastSlide ? 0 : currentIndex + 1;
+      const newIndex = (currentIndex + 1) % slideImages.length;
       setCurrentIndex(newIndex);
     };
 
@@ -159,16 +166,16 @@ const divStyle = {
     //   setCurrentIndex(newIndex);
     // };
 
-    useEffect(() => {
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-      }
-      timerRef.current = setTimeout(() => {
-        goToNext();
-      }, 4000);
+    // useEffect(() => {
+    //   if (timerRef.current) {
+    //     clearTimeout(timerRef.current);
+    //   }
+    //   timerRef.current = setTimeout(() => {
+    //     goToNext();
+    //   }, 4000);
 
-      return () => clearTimeout(timerRef.current);
-    }, [goToNext]);
+    //   return () => clearTimeout(timerRef.current);
+    // }, [goToNext]);
 
     const isMobile = window.innerWidth <= 767;
 
@@ -209,13 +216,13 @@ const divStyle = {
   };
 
   // Function to shuffle an array
-function shuffleArray(array) {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
+// function shuffleArray(array) {
+//   const shuffled = [...array];
+//   for (let i = shuffled.length - 1; i > 0; i--) {
+//     const j = Math.floor(Math.random() * (i + 1));
+//     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+//   }
+//   return shuffled;
+// }
 
   export default Slideshow;
