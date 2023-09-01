@@ -11,7 +11,8 @@ const DirectorsMainContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    max-width: 100vw;
+    min-width: 100vw;
     font-family: 'Lexend';
     font-size: 1.2rem;
     overflow: hidden;

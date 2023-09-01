@@ -197,7 +197,13 @@ const StyledLink = styled(Link)`
         justify-content: center;
         margin: 0em 0em 0em 0em;
         font-size: 28px;
+
+    &:hover{
+        text-decoration: none;
     }
+    
+  }
+    
 `;
 
 const ExternalStyledLink = styled.a`
@@ -219,6 +225,11 @@ const ExternalStyledLink = styled.a`
     @media screen and (max-width: 767px) {
         justify-content: center;
         font-size: 28px;
+
+        &:hover{
+        text-decoration: none;
+    }
+    
     }
 
     `;

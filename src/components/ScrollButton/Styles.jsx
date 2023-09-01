@@ -16,7 +16,7 @@ text-align: center;
 height: 80px;
 border-radius: 50%;
 left: 48%;
-top: 720px;
+bottom: 80px;;
 font-size: 3rem;
 z-index: 1;
 cursor: pointer;

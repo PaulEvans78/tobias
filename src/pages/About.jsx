@@ -7,6 +7,7 @@ import AboutComponent from '../components/AboutComponent/About/AboutComponent';
 
 const AboutMainContainer = styled.div`
      max-width: 100vw;
+     min-width: 100vw;
      display: flex;
      flex-direction: column;
      align-items: center;

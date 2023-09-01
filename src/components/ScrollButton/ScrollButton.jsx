@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import {SlArrowDown} from 'react-icons/sl';
 import { Button} from './Styles';
-// import styled from 'styled-components';
-  
 
 
-// const [showTopBtn, setShowTopBtn] = useState(false);
+// _________________________________________________________
+
   
 const ScrollToTop = () => {
   const [showTopBtn, setShowTopBtn] = useState(true);
@@ -28,20 +27,23 @@ const ScrollToTop = () => {
   };
   
   return (
-    // <StyledButtonContainer>
+    
       <Button>
           {" "}
           {showTopBtn && (
               <SlArrowDown
-                  // className="icon-position icon-style"
+                  
                   onClick={scrollToBottom}
               />
           )}{" "}
       </Button>
-    // </StyledButtonContainer>
+    
   );
 };
 export default ScrollToTop;
+
+
+// _______________________________________________________
   
   // const [visible, setVisible] = useState(false)
   

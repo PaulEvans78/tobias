@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {FiChevronLeft, FiChevronRight} from 'react-icons/fi';
 
 
+
 const StyledSlideContainer = styled.div`
     max-width: 100vw;
 

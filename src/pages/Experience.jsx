@@ -11,22 +11,13 @@ import { Fade } from "react-awesome-reveal";
 // MAIN CONTAINER
 
 const ExperienceMainContainer = styled.div`
-     grid-area: main;
      max-width: 100vw;
+     min-width: 100vw;
      display: flex;
      flex-direction: column;
      align-items: center;
 `;
 
-const Styledh5 = styled.h5`
-    margin: 1em 0em 2em 2em;
-    white-space: pre-wrap;
-    flex-wrap: wrap;
-    text-align: center;
-    font-family: 'lexend';
-    font-size: 28px;
-    color: black;
-`;
 
 
 

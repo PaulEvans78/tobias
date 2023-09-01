@@ -23,7 +23,7 @@ export  const StyledHContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    max-width: 100vw;
     min-width: 100vw;
     background-color: rgba(0, 0, 0, 0.8);  
     padding: 2em 0em 2em 0em;
@@ -72,11 +72,13 @@ export  const StyledInfoContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     max-width: 100%;
+    min-width: 100%;
     font-family: 'Lexend';
     font-size: 16px;
     line-height: 2rem;
     overflow: hidden;
     margin-bottom: 8em;
+    
 
     @media screen and (max-width: 960px) {
         padding: 2em;
@@ -84,6 +86,7 @@ export  const StyledInfoContainer = styled.div`
 
     @media screen and (max-width: 700px) {
         padding: 1em;
+        margin-bottom: 16em;
     }
 `;
 
@@ -93,9 +96,5 @@ export  const Styledp = styled.p`
     margin-right: 50px;
     margin-left: 50px;
     text-align: left;
-
-    @media screen and (max-width: 700px) {
-        text-align: center;
-    }
 `;
 

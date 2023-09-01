@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyledDirectorsMainContainer, StyledImgContainer, StyledDirectorsImg, StyledHContainer, StyledMobContainer, StyledInfoContainer, Styledp, Styledh2} from './styles';
 import { Fade } from "react-awesome-reveal";
+import  ScrollButton  from "../ScrollButton/ScrollButton";
 
 
 function Card (props) {
@@ -20,7 +21,7 @@ function Card (props) {
                 </StyledHContainer>
 
             </StyledImgContainer>
-
+           
 
             <StyledMobContainer>
                     <Styledh2>Directors</Styledh2>
@@ -33,7 +34,7 @@ function Card (props) {
                 </Fade>
                </StyledInfoContainer>
                
-
+<ScrollButton />
         </StyledDirectorsMainContainer>
     );
 }

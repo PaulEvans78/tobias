@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { StyledAboutMainContainer, StyledImgContainer, StyledAboutImg, StyledHContainer, StyledMobContainer, StyledInfoContainer, Styledp, Styledh2, StyledTypewriter, StyledAboutImgContainer, StyledAboutSmallImages, StyledButton, StyledButtonBackground } from './styles';
 import { useTypewriter } from 'react-simple-typewriter';
 import { Fade } from "react-awesome-reveal";
@@ -11,16 +11,6 @@ import {SlArrowDown} from 'react-icons/sl';
 
 function Card (props) {
 
-    
-    // const [startTyping, setStartTyping] = useState(false);
-
-    // useTypewriter({
-    //     words: ['1st AD Tobias - Saving the world one commercial at a time'],
-    //     typeSpeed: 75,
-    //     onTypeEnd: () => {
-    //         setTypingComplete(true);
-    //     },
-    // });
 
     const [text] = useTypewriter({
         words: ['1st AD Tobias - Saving the world one commercial at a time'],
@@ -30,48 +20,50 @@ function Card (props) {
    });
 
 
+   
    const section1 = useRef();
    const section2 = useRef();
    const section3 = useRef();
+   
 
-   const scrollTo = (section) => {
-    
-    section.current.scrollIntoView({ behavior:"smooth" });
-   };
+   const [currentSection, setCurrentSection] = useState(1);
 
+   const sections = [section1, section2, section3];
 
-//    useEffect(() => {
-//     const options = {
-//         root: null,
-//         rootMargin: '0px',
-//         threshold: 0.5, 
-//     };
+useEffect(() => {
+    const handleScroll = () => {
+      for (let i = 0; i < sections.length - 1; i++) {
+        if (
+          sections[i].current &&
+          sections[i + 1].current &&
+          window.scrollY >= sections[i].current.offsetTop &&
+          window.scrollY < sections[i + 1].current.offsetTop
+        ) {
+          setCurrentSection(i + 1);
+          break;
+        }
+      }
+    };
 
-//     const observer = new IntersectionObserver((entries) => {
-//         entries.forEach((entry) => {
-//             if (entry.isIntersecting && !startTyping) {
-//                 setStartTyping(true);
-//             }
-//         });
-//     }, options);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-//     if (section2.current) {
-//         observer.observe(section2.current);
-//     }
+    return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, [sections]);
+  
+    const scrollToSection = () => {
+        if (sections[currentSection] && sections[currentSection].current) {
+          sections[currentSection].current.scrollIntoView({ behavior: "smooth" });
+        }
+      };
 
-//     return () => {
-//         if (section2.current) {
-//             observer.unobserve(section2.current);
-//         }
-//     };
-// }, [startTyping]);
-
-    
     return (
      
         <StyledAboutMainContainer>
             <div ref={section1}>       
-            <StyledImgContainer scrollTo={scrollTo} goToSectionRef={section2}>
+            <StyledImgContainer >
+            
                 <StyledAboutImg src={props.mainPic} alt="Tobias Reiner"/>
 
                     <StyledHContainer>
@@ -87,19 +79,11 @@ function Card (props) {
     
                     <Fade>
                         <div ref={section2}>
-                        <StyledInfoContainer  scrollTo={scrollTo} goToSectionRef={section3}>
+                        <StyledInfoContainer >
+                        
 
                         <StyledTypewriter>
                                 {text}
-                                {/* {startTyping && (
-                            <useTypewriter
-                                words={['1st AD Tobias - Saving the world one commercial at a time']}
-                                cursor
-                                cursorStyle="_"
-                                typeSpeed={75}
-                            />
-                        )}
-                                 */}
                         </StyledTypewriter>
                         
 
@@ -136,12 +120,14 @@ function Card (props) {
                     </Fade>
                    
                     <StyledButtonBackground>
-               <StyledButton onClick={() => scrollTo(goToSectionRef)}>
-                    <SlArrowDown />
-                    </StyledButton>
+
+                        <StyledButton >
+                            <SlArrowDown onClick={scrollToSection} />
+                        </StyledButton>
+
                     </StyledButtonBackground>
                 
-
+                    
         </StyledAboutMainContainer>
     );
 }

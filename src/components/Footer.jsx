@@ -87,6 +87,11 @@ const StyledMailLink = styled.p`
 
   @media screen and (max-width: 767px) {
     margin-left: 0em;
+
+    &:hover{
+        text-decoration: none;
+    }
+
   }
 `;
 
@@ -103,6 +108,11 @@ const StyledTelLink = styled.p`
 
   @media screen and (max-width: 767px) {
     margin-left: 0em;
+
+    &:hover{
+        text-decoration: none;
+    }
+
   }
 `;
 
@@ -114,14 +124,14 @@ const IconContainer = styled.div`
   margin-right: 4em;
 
   @media screen and (max-width: 960px) {
-        margin-right: 2em;
+        margin-right: 0em;
 
     }
 
     
 
 @media screen and (max-width: 767px) {
-  margin-right: 2em;
+  margin-right: 0em;
 }
 `;
 
@@ -136,6 +146,15 @@ const StyledIcon = styled.a`
   &:hover{
         text-decoration: underline;
     }
+
+    @media screen and (max-width: 767px) {
+    margin-left: 0em;
+
+    &:hover{
+        text-decoration: none;
+    }
+    
+  }
 `;
 
 const IconDes = styled.p`

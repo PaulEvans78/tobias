@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 export const StyledAboutMainContainer = styled.div`
     max-width: 100vw;
+    overflow-x: hidden;
 `;
 
 export  const StyledImgContainer = styled.div`
@@ -11,11 +12,15 @@ export  const StyledImgContainer = styled.div`
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    width: 100vw;
+    max-width: 100vw;
+    /* min-width: 100vw; */
+    /* overflow: hidden; */
 `;
 
 export  const StyledAboutImg = styled.img`
-    max-width: 100%;
+    max-width: 100vw;
+    min-width: 100vw;
+    max-height: 100vh;
     align-self: center;
     object-fit: cover;
 `;
@@ -25,12 +30,12 @@ export  const StyledHContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    max-width: 100vw;
     min-width: 100vw;
     background-color: rgba(0, 0, 0, 0.8);  
     padding: 2em 0em 2em 0em;
     margin-bottom: 10em;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     animation-name: fadeIn;
     animation-duration: 2s;
@@ -75,13 +80,15 @@ export  const StyledInfoContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 100%;
+    max-width: 100vw;
+    /* min-width: 100vw; */
     padding: 3em;
     font-family: 'Lexend';
     font-size: 16px;
     line-height: 1.5rem;
     overflow: hidden;
     scroll-snap-align: center;
+   
 
     @media screen and (max-width: 960px) {
         padding: 2em;
@@ -93,15 +100,14 @@ export  const StyledInfoContainer = styled.div`
 `;
 
 export  const Styledp = styled.p`
+    max-width: 100vw;
     color: whitesmoke;
     font-size: 16px;
     margin-right: 50px;
     margin-left: 50px;
     text-align: left;
 
-    @media screen and (max-width: 700px) {
-        text-align: center;
-    }
+
 `;
 
 export const StyledTypewriter = styled.span `
@@ -127,11 +133,12 @@ export  const StyledAboutImgContainer = styled.div`
     width: 100%;
     margin-top: 2em;
     margin-bottom: 10em;
+    
 
     @media screen and (max-width: 700px) {
         flex-direction: column;
         row-gap: 3em;
-        margin-bottom: 14em;
+        margin-bottom: 16em;
     }
 `;
 
@@ -156,7 +163,7 @@ export const StyledButtonBackground = styled.div`
     justify-self: center;
     justify-content: center;
     height: 60px;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.8);
     width: 60px;
     margin: 20px;
     border: none;

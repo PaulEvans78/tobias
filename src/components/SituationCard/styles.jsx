@@ -8,7 +8,7 @@ export const StyledSituationCard = styled.div`
     justify-content: flex-end;
     align-items: flex-start;
     max-width: 100vw;
-    background-color: black;
+    /* background-color: black; */
     font-family: 'Lexend';
     font-size: 1.2rem;
     overflow: hidden;
@@ -62,7 +62,7 @@ export const StyledInfoContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     max-width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);     
+    /* background-color: rgba(0, 0, 0, 0.9);      */
     margin-bottom: 2.5em;
     padding: 2em 2em 1em 2em;
 `;
