@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import DirectorsList from '../components/DirectorsComponent/DirectorsList/DirectorsList';
-import ScrollButton from '../components/ScrollButton/ScrollButton';
+
 
 
 // MAIN CONTAINER
@@ -29,8 +29,6 @@ function Directors() {
         <DirectorsMainContainer>
 
                 <DirectorsList/>
-            
-                    <ScrollButton />
 
         </DirectorsMainContainer>
     );

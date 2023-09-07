@@ -121,10 +121,11 @@ const IconContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-right: 4em;
+  justify-items:center;
+  margin-right: 2em;
 
   @media screen and (max-width: 960px) {
-        margin-right: 0em;
+        margin-right: 2em;
 
     }
 
@@ -190,6 +191,7 @@ const StyledCopyRight = styled.div`
     font-size: 8px;
     margin-left: 1em;
     margin-right: 1em;
+    margin-top: 2em;
     }
 `;
 

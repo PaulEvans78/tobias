@@ -110,7 +110,7 @@ const StyledName = styled.h1 `
     color: whitesmoke;
     margin-bottom: 0;
     margin-top: 0.5em;
-    text-shadow: 1px 1px 4px black;
+    text-shadow: 1px 1px 5px #2f2f2f;
 
     @media screen and (max-width: 1030px) {
         font-size: 48px;
@@ -136,7 +136,7 @@ const StyledTitle = styled.div `
     color: whitesmoke;
     margin-top: 0.5em;
     margin-left: 0.5em;
-    text-shadow: 1px 1px 4px black;
+    text-shadow: 1px 1px 4px #2f2f2f;
 
     @media screen and (max-width: 767px) {
         font-size: 16px;

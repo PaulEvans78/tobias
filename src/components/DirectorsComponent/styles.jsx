@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const StyledDirectorsMainContainer = styled.div`
     max-width: 100vw;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 export  const StyledImgContainer = styled.div`
@@ -10,6 +14,7 @@ export  const StyledImgContainer = styled.div`
     justify-content: flex-end;
     align-items: center;
     max-width: 100vw; 
+    /* max-height: 100vw; */
 `;
 
 export  const StyledDirectorsImg = styled.img`
@@ -26,8 +31,8 @@ export  const StyledHContainer = styled.div`
     max-width: 100vw;
     min-width: 100vw;
     background-color: rgba(0, 0, 0, 0.8);  
-    padding: 2em 0em 2em 0em;
-    margin-bottom: 8em;
+    padding: 20px 0px 20px 0px;
+    margin-bottom: 14em;
 
     animation-name: fadeIn;
     animation-duration: 2s;
@@ -37,6 +42,10 @@ export  const StyledHContainer = styled.div`
         0% { opacity: 0; }
         100% { opacity: 1; }
     }
+
+    @media screen and (max-width: 1460px) {
+    margin-bottom: 6em;
+}
 
     @media screen and (max-width: 960px) {
         margin-bottom: 0em;
@@ -78,6 +87,7 @@ export  const StyledInfoContainer = styled.div`
     line-height: 2rem;
     overflow: hidden;
     margin-bottom: 8em;
+    scroll-snap-align: center;
     
 
     @media screen and (max-width: 960px) {
@@ -98,3 +108,47 @@ export  const Styledp = styled.p`
     text-align: left;
 `;
 
+export const StyledSection = styled.div`
+    max-width: 100vw;
+    min-width: 100vw;
+    max-height: 200px;
+`;
+
+export const StyledButtonBackground = styled.div`
+    position: fixed;
+    /* left: 47%; */
+    bottom: 65px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.8);
+    width: 60px;
+    margin: 20px;
+    border: none;
+    text-align: center;
+    border-radius: 50%;
+
+    @media screen and (max-width: 1460px) {
+        /* left: 46%;   */
+}
+
+    @media screen and (max-width: 960px) {
+        /* left: 44%; */
+    }
+`;
+
+export const StyledButton = styled.a`
+    text-align: center;
+    height: 80px;
+    /* border-radius: 50%; */
+    /* left: 48%;
+    bottom: 50px; */
+    font-size: 2em;
+    z-index: 1;
+    cursor: pointer;
+    color: black;
+    margin-top: 1em;
+`;

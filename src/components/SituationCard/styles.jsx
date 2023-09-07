@@ -8,7 +8,6 @@ export const StyledSituationCard = styled.div`
     justify-content: flex-end;
     align-items: flex-start;
     max-width: 100vw;
-    /* background-color: black; */
     font-family: 'Lexend';
     font-size: 1.2rem;
     overflow: hidden;
@@ -32,9 +31,14 @@ export const StyledHeaderContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    /* justify-items: flex-start; */
     max-width: 100%;
-    margin-bottom: 2.5em;
+    margin-bottom: 15em;
     padding: 2em 2em 1em 2em;
+
+    @media screen and (max-width: 1460px) {
+    margin-bottom: 8em;
+}
 
     @media screen and (max-width: 960px) {
         margin-bottom: 0em;
@@ -46,7 +50,13 @@ export const Styledh2 = styled.h2`
     white-space: pre-wrap;
     color: whitesmoke;
     font-family: 'MuseoModerno', cursive;
+    font-size: 64px;
+    margin-left: 1em;
+
+    @media screen and (max-width: 1460px) {
     font-size: 48px;
+    margin-left: 0em;
+}
 
     @media screen and (max-width: 960px) {
         margin-bottom: 0em;

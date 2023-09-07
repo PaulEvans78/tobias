@@ -4,6 +4,10 @@ import styled from "styled-components";
 
 export const StyledAboutMainContainer = styled.div`
     max-width: 100vw;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow-x: hidden;
 `;
 
@@ -33,10 +37,9 @@ export  const StyledHContainer = styled.div`
     max-width: 100vw;
     min-width: 100vw;
     background-color: rgba(0, 0, 0, 0.8);  
-    padding: 2em 0em 2em 0em;
-    margin-bottom: 10em;
-    /* overflow: hidden; */
-
+    padding: 20px 0px 20px 0px;
+    margin-bottom: 14em;
+    
     animation-name: fadeIn;
     animation-duration: 2s;
     animation-delay: 0s;
@@ -44,6 +47,10 @@ export  const StyledHContainer = styled.div`
     @keyframes fadeIn {
         0% { opacity: 0; }
         100% { opacity: 1; }
+    }
+
+    @media screen and (max-width: 1460px) {
+    margin-bottom: 7em;
     }
 
     @media screen and (max-width: 960px) {
@@ -81,7 +88,6 @@ export  const StyledInfoContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     max-width: 100vw;
-    /* min-width: 100vw; */
     padding: 3em;
     font-family: 'Lexend';
     font-size: 16px;
@@ -155,8 +161,8 @@ export  const StyledAboutSmallImages = styled.img`
 
 export const StyledButtonBackground = styled.div`
     position: fixed;
-    left: 46%;
-    bottom: 80px;
+    /* left: 46%; */
+    bottom: 70px;
     display: flex;
     flex-direction: row;
     align-items: center;

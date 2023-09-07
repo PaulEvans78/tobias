@@ -26,6 +26,8 @@ function Card (props) {
    const section3 = useRef();
    
 
+   
+
    const [currentSection, setCurrentSection] = useState(1);
 
    const sections = [section1, section2, section3];
@@ -53,16 +55,21 @@ useEffect(() => {
     }, [sections]);
   
     const scrollToSection = () => {
+        console.log("Button clicked. scrollToSection called.");
         if (sections[currentSection] && sections[currentSection].current) {
           sections[currentSection].current.scrollIntoView({ behavior: "smooth" });
-        }
+        } else {
+            console.error(`Section ${currentSection + 1} or its ref is missing.`);
+          }
       };
+
+      const isLastSection = currentSection === sections.length - 1;
 
     return (
      
         <StyledAboutMainContainer>
-            <div ref={section1}>       
-            <StyledImgContainer >
+            <div >       
+            <StyledImgContainer ref={section1}>
             
                 <StyledAboutImg src={props.mainPic} alt="Tobias Reiner"/>
 
@@ -71,15 +78,15 @@ useEffect(() => {
                     </StyledHContainer>
 
             </StyledImgContainer>
-            </div>
+            
             <StyledMobContainer>
                     <Styledh2>About</Styledh2>
             </StyledMobContainer>
-
+            </div>
     
                     <Fade>
-                        <div ref={section2}>
-                        <StyledInfoContainer >
+                        <div>
+                        <StyledInfoContainer ref={section2}>
                         
 
                         <StyledTypewriter>
@@ -108,8 +115,8 @@ useEffect(() => {
                     </Fade> 
 
                     <Fade>
-                    <div ref={section3}>
-                        <StyledAboutImgContainer>
+                    <div >
+                        <StyledAboutImgContainer ref={section3}>
 
                             <StyledAboutSmallImages src={props.PicOne} alt="Tobias Reiner"/>
                             <StyledAboutSmallImages src={props.PicTwo} alt="Tobias Reiner"/>
@@ -119,15 +126,16 @@ useEffect(() => {
                         </div>
                     </Fade>
                    
+                    {!isLastSection && (
                     <StyledButtonBackground>
 
                         <StyledButton >
                             <SlArrowDown onClick={scrollToSection} />
                         </StyledButton>
 
-                    </StyledButtonBackground>
-                
-                    
+                    </StyledButtonBackground>               
+                )}
+
         </StyledAboutMainContainer>
     );
 }

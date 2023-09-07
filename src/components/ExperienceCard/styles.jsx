@@ -27,8 +27,8 @@ export  const StyledHContainer = styled.div`
     width: 100vw;
     min-width: 100vw;
     background-color: rgba(0, 0, 0, 0.8);  
-    padding: 2em 0em 2em 0em;
-    margin-bottom: 8em;
+    padding: 20px 0px 20px 0px;
+    margin-bottom: 18em;
 
     animation-name: fadeIn;
     animation-duration: 2s;
@@ -38,6 +38,12 @@ export  const StyledHContainer = styled.div`
         0% { opacity: 0; }
         100% { opacity: 1; }
     }
+
+
+    @media screen and (max-width: 1460px) {
+    margin-bottom: 8em;
+}
+    
 
     @media screen and (max-width: 960px) {
         margin-bottom: 0em;
