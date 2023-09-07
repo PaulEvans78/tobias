@@ -9,6 +9,7 @@ const StyledNav = styled.nav`
     max-width: 100vw;
     min-width: 100vw;
     overflow-x: hidden;
+    overflow-y: hidden;
     position: fixed;
     z-index: 100;
     display: flex;
@@ -27,7 +28,7 @@ const StyledNav = styled.nav`
 
     @media screen and (max-width: 767px) {
         background-color: #171717;
-        position: relative;
+        /* position: relative; */
         justify-items: flex-end;
         justify-content: space-between;
         margin-top: 0;
@@ -168,7 +169,11 @@ const StyledNavul = styled.ul`
         width: 100vw;
         background-color: #171717;
         transform: translateX(800px);
+        -webkit-transform: translateX(800px); /* Safari */
+        -moz-transform: translateX(800px); /* Firefox */
         transition: 0.5s ease-in-out; 
+        -webkit-transition: transform 0.5s ease-in-out;
+        -moz-transition: transform 0.5s ease-in-out;
         margin-top: 0;
         margin-right: 0;
         margin-bottom: 0em;
@@ -225,6 +230,7 @@ const ExternalStyledLink = styled.a`
     @media screen and (max-width: 767px) {
         justify-content: center;
         font-size: 28px;
+        margin-bottom:4em;
 
         &:hover{
         text-decoration: none;

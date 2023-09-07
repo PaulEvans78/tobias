@@ -21,6 +21,10 @@ export  const StyledDirectorsImg = styled.img`
     width: 100%;
     align-self: center;
     object-fit: cover;
+
+    @media screen and (max-width: 767px) {
+        margin-top: 4em;
+    }
 `;
 
 export  const StyledHContainer = styled.div`
@@ -44,7 +48,7 @@ export  const StyledHContainer = styled.div`
     }
 
     @media screen and (max-width: 1460px) {
-    margin-bottom: 6em;
+    margin-bottom: 8em;
 }
 
     @media screen and (max-width: 960px) {

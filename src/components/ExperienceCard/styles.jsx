@@ -17,6 +17,10 @@ export const StyledExperienceCardImg = styled.img`
     width: 100%;
     align-self: center;
     object-fit: cover;
+
+    @media screen and (max-width: 767px) {
+        margin-top: 4em;
+    }
  `; 
 
 export  const StyledHContainer = styled.div`
@@ -41,7 +45,7 @@ export  const StyledHContainer = styled.div`
 
 
     @media screen and (max-width: 1460px) {
-    margin-bottom: 8em;
+    margin-bottom: 10em;
 }
     
 

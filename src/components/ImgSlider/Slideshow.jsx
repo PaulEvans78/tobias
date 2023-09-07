@@ -6,13 +6,20 @@ import {FiChevronLeft, FiChevronRight} from 'react-icons/fi';
 
 const StyledSlideContainer = styled.div`
     max-width: 100vw;
+    max-height: 100vh;
+    min-height: 100vh;
+    position: relative;
 
 `;
 
 const StyledArrowsContainer = styled.div`
     width: 100vw;
-    position: absolute;
+    /* max-height: 50vh; */
+    
+    /* overflow-y: hidden; */
+    position: fixed;
     top: 45%;
+    transform: translateY(-45%);
     display: flex;
     flex-direction: row;
     align-content: space-between;
@@ -20,6 +27,7 @@ const StyledArrowsContainer = styled.div`
 
     @media screen and (max-width: 767px) {
       top: 35%;
+      transform: translateY(-35%);
     }
 `;
 
@@ -49,6 +57,19 @@ const StyledRightArrow = styled.a`
     margin-left: 3px;
 `;
 
+const StyledMobContainer = styled.div`
+    display: none;
+
+    @media screen and (max-width: 767px) {
+      max-width: 100vw;
+      max-height: 100vh;
+      min-height: 100vh;
+      position: fixed;
+        display: flex;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+`;
 
 const divStyle = {
     display: 'flex',
@@ -59,7 +80,9 @@ const divStyle = {
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
     height: '100vh',
-    transition: 'ease 2000ms',
+  
+    // transition: 'ease 3000ms',
+    // WebkitTransition: 'ease 3000ms',
   }
 
   
@@ -177,14 +200,41 @@ const divStyle = {
     //   return () => clearTimeout(timerRef.current);
     // }, [goToNext]);
 
-    const isMobile = window.innerWidth <= 767;
 
-    const dynamicStyle = {
-      ...divStyle,
-      backgroundImage: `url(${slideImages[currentIndex].src})`,
-      ...(isMobile && { height: '90vh' }), // Apply height change for mobile screens
-    };
+
+    // const isMobile = window.innerWidth <= 767;
+
+    // const dynamicStyle = {
+    //   ...divStyle,
+    //   backgroundImage: `url(${slideImages[currentIndex].src})`,
+    //   ...(isMobile && 
+    //     { 
+    //       height: '300px',
+    //       width: '100vw', 
+          
+    //     }), 
+    // };
   
+
+
+
+  //   const mobileDivStyle = {
+  //     ...divStyle,
+  //     height: '90vh',
+  // };
+  
+  // const isMobile = window.innerWidth <= 767;
+  
+  // const dynamicStyle = {
+  //     ...(isMobile ? mobileDivStyle : divStyle),
+  //     backgroundImage: `url(${slideImages[currentIndex].src})`,
+  // };
+
+
+  const dynamicStyle = {
+    ...divStyle,
+    backgroundImage: `url(${slideImages[currentIndex].src})`,
+  };
     
       return (
         <StyledSlideContainer>
@@ -210,6 +260,10 @@ const divStyle = {
             </StyledArrowsContainer>
             
             <div style={dynamicStyle}></div>
+
+            <StyledMobContainer>
+            <div style={dynamicStyle}></div>
+            </StyledMobContainer>
 
         </StyledSlideContainer>
       )

@@ -27,6 +27,10 @@ export  const StyledAboutImg = styled.img`
     max-height: 100vh;
     align-self: center;
     object-fit: cover;
+
+    @media screen and (max-width: 767px) {
+        margin-top: 4em;
+    }
 `;
 
 export  const StyledHContainer = styled.div`
