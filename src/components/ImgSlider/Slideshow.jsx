@@ -81,6 +81,7 @@ const divStyle = {
     backgroundAttachment: 'fixed',
     height: '100vh',
   
+
     // transition: 'ease 3000ms',
     // WebkitTransition: 'ease 3000ms',
   }

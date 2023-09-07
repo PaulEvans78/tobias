@@ -100,7 +100,7 @@ export  const StyledInfoContainer = styled.div`
 
     @media screen and (max-width: 700px) {
         padding: 1em;
-        margin-bottom: 4em;
+        margin-bottom: 16em;
     }
 `;
 

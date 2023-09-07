@@ -236,7 +236,7 @@ export const StyledCopyRightContainer = styled.div`
 
  
   @media screen and (max-width: 767px) {
-     margin-bottom: 2em;
+     margin-bottom: 16em;
     }
 `;
 
