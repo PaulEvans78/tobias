@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { StyledAboutMainContainer, StyledImgContainer, StyledAboutImg, StyledHContainer, StyledMobContainer, StyledInfoContainer, Styledp, Styledh2, StyledTypewriter, StyledAboutImgContainer, StyledAboutSmallImages, StyledButton, StyledButtonBackground } from './styles';
+import { StyledAboutMainContainer, StyledImgContainer, StyledAboutImg, StyledHContainer, StyledMobContainer, StyledInfoContainer, Styledp, Styledh2, StyledTypewriter, StyledAboutImgContainer, StyledAboutSmallImages, StyledButton, StyledButtonBackground, StyledCopyRightContainer, StyledCopyRight } from './styles';
 import { useTypewriter } from 'react-simple-typewriter';
 import { Fade } from "react-awesome-reveal";
 import {SlArrowDown} from 'react-icons/sl';
@@ -24,13 +24,14 @@ function Card (props) {
    const section1 = useRef();
    const section2 = useRef();
    const section3 = useRef();
+   const section4 = useRef();
    
 
    
 
    const [currentSection, setCurrentSection] = useState(1);
 
-   const sections = [section1, section2, section3];
+   const sections = [section1, section2, section3, section4];
 
 useEffect(() => {
     const handleScroll = () => {
@@ -126,7 +127,17 @@ useEffect(() => {
                         </div>
                     </Fade>
                    
-                    {!isLastSection && (
+                  
+
+<StyledCopyRightContainer ref={section4}>
+
+              <StyledCopyRight>Copyright 2023</StyledCopyRight>
+              <StyledCopyRight>Paul Evans</StyledCopyRight>
+              <StyledCopyRight>Creative</StyledCopyRight>
+
+          </StyledCopyRightContainer>
+
+          {!isLastSection && (
                     <StyledButtonBackground>
 
                         <StyledButton >
@@ -135,7 +146,7 @@ useEffect(() => {
 
                     </StyledButtonBackground>               
                 )}
-
+                
         </StyledAboutMainContainer>
     );
 }

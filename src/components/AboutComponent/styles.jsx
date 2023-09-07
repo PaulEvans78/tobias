@@ -92,6 +92,7 @@ export  const StyledInfoContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     max-width: 100vw;
+    /* height: 90vh; */
     padding: 3em;
     font-family: 'Lexend';
     font-size: 16px;
@@ -125,7 +126,7 @@ export const StyledTypewriter = styled.span `
     font-family: 'Delicious Handrawn', cursive;
     font-size: 32px;
     color: whitesmoke;
-    margin-top: 1em;
+    margin-top: 0em;
     margin-bottom: 1.5em;
 
     @media screen and (max-width: 700px) {
@@ -142,13 +143,13 @@ export  const StyledAboutImgContainer = styled.div`
     align-items: center;
     width: 100%;
     margin-top: 2em;
-    margin-bottom: 10em;
+    margin-bottom: 2em;
     
 
     @media screen and (max-width: 700px) {
         flex-direction: column;
         row-gap: 3em;
-        margin-bottom: 16em;
+        margin-bottom: 1em;
     }
 `;
 
@@ -179,6 +180,10 @@ export const StyledButtonBackground = styled.div`
     border: none;
     text-align: center;
     border-radius: 50%;
+
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
 `;
 
 export const StyledButton = styled.a`
@@ -195,6 +200,10 @@ export const StyledButton = styled.a`
     cursor: pointer;
     color: black;
     margin-top: 1em;
+
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
 
 /* @keyframes movebtn {
   0%{
@@ -214,4 +223,35 @@ export const StyledButton = styled.a`
   }
 } */
 
+`;
+
+export const StyledCopyRightContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  column-gap: 1em;
+  margin-top: 2em;
+  /* margin-right: 2em; */
+  margin-bottom: 11em;
+
+ 
+  @media screen and (max-width: 767px) {
+     margin-bottom: 2em;
+    }
+`;
+
+
+export const StyledCopyRight = styled.div`
+  font-size: 12px;
+  line-height: 26px;
+  font-family: 'Lexend';
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px black;
+
+  @media screen and (max-width: 767px) {
+    font-size: 8px;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 2em;
+    }
 `;

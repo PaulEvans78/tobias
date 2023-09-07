@@ -43,9 +43,9 @@ const StyledButtonBackground = styled.div`
     text-align: center;
     border-radius: 50%;
 
-    @media screen and (max-width: 1460px) {
-        /* left: 46%; */
-}
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 `;
 
 const StyledButton = styled.a`
@@ -59,6 +59,10 @@ const StyledButton = styled.a`
     cursor: pointer;
     color: black;
     margin-top: 1em;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 `;
 
 

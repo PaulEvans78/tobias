@@ -39,7 +39,7 @@ const StyledFooter = styled.footer`
   justify-items: center;
   align-items: flex-end;
   font-family: 'Lexend';
-  font-size: 12px;
+  font-size: 14px;
   line-height: 24px;
   color: whitesmoke;
 
@@ -142,7 +142,7 @@ const StyledIcon = styled.a`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 1em 2em 0em 2em;
+  margin: 1em 1em 0em 2em;
   
   &:hover{
         text-decoration: underline;
@@ -163,37 +163,39 @@ const IconDes = styled.p`
   flex-direction: column;
   align-content: center;
   font-family: 'Lexend';
+  font-size: 12px;
   line-height: 24px;
   color: whitesmoke;
   text-align: center;
   margin-top: 0.5em;
 `;
 
-const StyledCopyRightContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  margin-right: 2em;
-  margin-bottom: 1em;
+// const StyledCopyRightContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   text-align: right;
+//   /* margin-right: 1em; */
+//   margin-bottom: 1em;
 
-  @media screen and (max-width: 767px) {
-    flex-direction: row;
-    }
-`;
+//   @media screen and (max-width: 767px) {
+//     display: none;
+//     flex-direction: row;
+//     }
+// `;
 
-const StyledCopyRight = styled.div`
-  line-height: 26px;
-  font-family: 'Lexend';
-  color: whitesmoke;
-  text-shadow: 2px 2px 4px black;
+// const StyledCopyRight = styled.div`
+//   line-height: 26px;
+//   font-family: 'Lexend';
+//   color: whitesmoke;
+//   text-shadow: 2px 2px 4px black;
 
-  @media screen and (max-width: 767px) {
-    font-size: 8px;
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-top: 2em;
-    }
-`;
+//   @media screen and (max-width: 767px) {
+//     font-size: 8px;
+//     margin-left: 1em;
+//     margin-right: 1em;
+//     margin-top: 2em;
+//     }
+// `;
 
 const Footer = () => {
     return (
@@ -209,15 +211,16 @@ const Footer = () => {
           </StyledContactContainer>
 
         
-              <Icons />
+              {/* <Icons /> */}
 
-          <StyledCopyRightContainer>
+          {/* <StyledCopyRightContainer> */}
+          <Icons />
 
-              <StyledCopyRight>Copyright 2023</StyledCopyRight>
+              {/* <StyledCopyRight>Copyright 2023</StyledCopyRight>
               <StyledCopyRight>Paul Evans</StyledCopyRight>
-              <StyledCopyRight>Creative</StyledCopyRight>
+              <StyledCopyRight>Creative</StyledCopyRight> */}
 
-          </StyledCopyRightContainer>
+          {/* </StyledCopyRightContainer> */}
 
         </StyledFooter>
 

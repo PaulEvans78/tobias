@@ -100,7 +100,7 @@ export  const StyledInfoContainer = styled.div`
 
     @media screen and (max-width: 700px) {
         padding: 1em;
-        margin-bottom: 16em;
+        margin-bottom: 4em;
     }
 `;
 
@@ -135,12 +135,8 @@ export const StyledButtonBackground = styled.div`
     text-align: center;
     border-radius: 50%;
 
-    @media screen and (max-width: 1460px) {
-        /* left: 46%;   */
-}
-
-    @media screen and (max-width: 960px) {
-        /* left: 44%; */
+    @media screen and (max-width: 767px) {
+        display: none;
     }
 `;
 
@@ -155,4 +151,8 @@ export const StyledButton = styled.a`
     cursor: pointer;
     color: black;
     margin-top: 1em;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 `;
