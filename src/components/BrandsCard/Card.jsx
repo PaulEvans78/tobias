@@ -14,7 +14,7 @@ function Card (props) {
 
                 <StyledImgContainer>
                     
-                    <StyledBrandsCardImg src={props.mainPic} alt="Landrover"/>
+                    <StyledBrandsCardImg src={props.mainPic} alt="Maclaren"/>
              
                         <StyledHeaderContainer>
                             <Styledh2>{props.headline}</Styledh2>

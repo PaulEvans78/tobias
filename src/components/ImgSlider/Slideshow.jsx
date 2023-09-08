@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from "styled-components";
 import {FiChevronLeft, FiChevronRight} from 'react-icons/fi';
 
@@ -10,13 +10,17 @@ const StyledSlideContainer = styled.div`
     min-height: 100vh;
     position: relative;
 
+    @media screen and (max-width: 767px) {
+      /* bottom: 5%; */
+      position: fixed;
+      background-color: rgba(23, 23, 23); 
+      margin-top: 10em;
+      transform: translateY(-5%);
+    }
 `;
 
 const StyledArrowsContainer = styled.div`
     width: 100vw;
-    /* max-height: 50vh; */
-    
-    /* overflow-y: hidden; */
     position: fixed;
     top: 45%;
     transform: translateY(-45%);
@@ -24,10 +28,12 @@ const StyledArrowsContainer = styled.div`
     flex-direction: row;
     align-content: space-between;
     justify-content: space-between;
+    z-index: 99;
 
     @media screen and (max-width: 767px) {
-      top: 35%;
-      transform: translateY(-35%);
+      /* bottom: 5%; */
+      top: 25%;
+      transform: translateY(-25%);
     }
 `;
 
@@ -57,17 +63,27 @@ const StyledRightArrow = styled.a`
     margin-left: 3px;
 `;
 
+const StyledDesktopContainer = styled.div`
+   
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+`;
+
 const StyledMobContainer = styled.div`
     display: none;
 
     @media screen and (max-width: 767px) {
       max-width: 100vw;
-      max-height: 100vh;
-      min-height: 100vh;
-      position: fixed;
-        display: flex;
-        justify-content: center;
-        overflow-x: hidden;
+      min-width: 100vw;
+      /* height: 100vh; */
+      height: 450px;
+      /* position: fixed; */
+      display: flex;
+      /* align-content: center; */
+      /* justify-content: center; */
+      overflow-x: hidden;
     }
 `;
 
@@ -80,13 +96,20 @@ const divStyle = {
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
     height: '100vh',
-  
-
     // transition: 'ease 3000ms',
     // WebkitTransition: 'ease 3000ms',
   }
 
-  
+  // const divMobStyle = {
+  //   display: 'flex',
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  //   backgroundSize: 'cover',
+  //   backgroundPosition: 'center center',
+  //   backgroundRepeat: 'no-repeat',
+  //   backgroundAttachment: 'fixed',
+  //   width: '10px',
+  // }
 
   const slideImages = [
     {
@@ -143,99 +166,37 @@ const divStyle = {
   ];
   
   const Slideshow = () => {
-
-    const timerRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
   
-    const shuffleImages = () => {
-      const newIndex = Math.floor(Math.random() * slideImages.length);
-      setCurrentIndex(newIndex);
-    };
-
-    //Random
-    
     useEffect(() => {
-      shuffleImages(); // Initial shuffle
-      timerRef.current = setInterval(() => {
-        shuffleImages(); // Shuffle images every 4 seconds
+      const timer = setInterval(() => {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === slideImages.length - 1 ? 0 : prevIndex + 1
+        );
       }, 4000);
   
-      return () => clearInterval(timerRef.current);
+      return () => clearInterval(timer);
     }, []);
   
-    const goToPrevious = () => {
-      const newIndex = (currentIndex - 1 + slideImages.length) % slideImages.length;
-      setCurrentIndex(newIndex);
+    const isMobile = window.innerWidth <= 767;
+
+    const dynamicStyle = {
+      ...divStyle,
+      backgroundImage: `url(${slideImages[currentIndex].src})`,
+      ...(isMobile && { 
+        height: 'auto',
+        width: '100%',
+        // top: '200%',
+        // transform: 'translateY(-20%)',
+        backgroundPosition: 'center',
+        backgroundSize: 'contain', }
+        ), 
     };
-  
-    const goToNext = () => {
-      const newIndex = (currentIndex + 1) % slideImages.length;
-      setCurrentIndex(newIndex);
-    };
-
-    // Previous Slide
-
-    // const goToPrevious = () => {
-    //   const isFirstSlide = currentIndex === 0;
-    //   const newIndex = isFirstSlide ? slideImages.length - 1 : currentIndex - 1;
-    //   setCurrentIndex(newIndex);
-    // };
 
 
-    // Next Slide
-
-    // const goToNext = () => {
-    //   const isLastSlide = currentIndex === slideImages.length - 1;
-    //   const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    //   setCurrentIndex(newIndex);
-    // };
-
-    // useEffect(() => {
-    //   if (timerRef.current) {
-    //     clearTimeout(timerRef.current);
-    //   }
-    //   timerRef.current = setTimeout(() => {
-    //     goToNext();
-    //   }, 4000);
-
-    //   return () => clearTimeout(timerRef.current);
-    // }, [goToNext]);
+   
 
 
-
-    // const isMobile = window.innerWidth <= 767;
-
-    // const dynamicStyle = {
-    //   ...divStyle,
-    //   backgroundImage: `url(${slideImages[currentIndex].src})`,
-    //   ...(isMobile && 
-    //     { 
-    //       height: '300px',
-    //       width: '100vw', 
-          
-    //     }), 
-    // };
-  
-
-
-
-  //   const mobileDivStyle = {
-  //     ...divStyle,
-  //     height: '90vh',
-  // };
-  
-  // const isMobile = window.innerWidth <= 767;
-  
-  // const dynamicStyle = {
-  //     ...(isMobile ? mobileDivStyle : divStyle),
-  //     backgroundImage: `url(${slideImages[currentIndex].src})`,
-  // };
-
-
-  const dynamicStyle = {
-    ...divStyle,
-    backgroundImage: `url(${slideImages[currentIndex].src})`,
-  };
     
       return (
         <StyledSlideContainer>
@@ -245,7 +206,7 @@ const divStyle = {
                 <StyledArrowBackground>
 
                         <StyledLeftArrow>
-                                <FiChevronLeft  onClick={goToPrevious}/>
+                                <FiChevronLeft  onClick={() => setCurrentIndex((prevIndex) => (prevIndex === 0 ? slideImages.length - 1 : prevIndex - 1))} />
                         </StyledLeftArrow>
 
                 </StyledArrowBackground> 
@@ -253,14 +214,16 @@ const divStyle = {
                 <StyledArrowBackground>
 
                         <StyledRightArrow>
-                              <FiChevronRight onClick={goToNext}/>
+                              <FiChevronRight onClick={() => setCurrentIndex((prevIndex) => (prevIndex === slideImages.length - 1 ? 0 : prevIndex + 1))} />
                         </StyledRightArrow>
                       
                 </StyledArrowBackground>
             
             </StyledArrowsContainer>
             
+            <StyledDesktopContainer>
             <div style={dynamicStyle}></div>
+            </StyledDesktopContainer>
 
             <StyledMobContainer>
             <div style={dynamicStyle}></div>
