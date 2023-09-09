@@ -164,66 +164,6 @@ export  const StyledAboutSmallImages = styled.img`
     }
 `;
 
-export const StyledButtonBackground = styled.div`
-    position: fixed;
-    /* left: 46%; */
-    bottom: 70px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-self: center;
-    justify-content: center;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.8);
-    width: 60px;
-    margin: 20px;
-    border: none;
-    text-align: center;
-    border-radius: 50%;
-
-    @media screen and (max-width: 700px) {
-        display: none;
-    }
-`;
-
-export const StyledButton = styled.a`
-    /* background-color: #ffffff8d; */
-    /* border-radius: 50px; */
-
-    text-align: center;
-    height: 80px;
-    /* border-radius: 50%; */
-    /* left: 48%;
-    bottom: 50px; */
-    font-size: 2.5em;
-    z-index: 1;
-    cursor: pointer;
-    color: black;
-    margin-top: 1em;
-
-    @media screen and (max-width: 700px) {
-        display: none;
-    }
-
-/* @keyframes movebtn {
-  0%{
-    transform: translateY(0px);
-  }
-  25%{
-    transform: translateY(20px);
-  }
-  50%{
-    transform: translateY(0px);
-  }
-  75%{
-    transform: translateY(-20px);
-  }
-  100%{
-    transform: translateY(0px);
-  }
-} */
-
-`;
 
 export const StyledCopyRightContainer = styled.div`
   display: flex;

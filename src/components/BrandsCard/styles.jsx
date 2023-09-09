@@ -75,7 +75,7 @@ export const StyledInfoContainer = styled.div`
     /* justify-content: flex-start; */
     max-width: 100%;
     /* background-color: rgba(0, 0, 0, 0.9);      */
-    margin-bottom: 6em;
+    margin-bottom: 11em;
     padding: 2em 2em 1em 2em;
 
     @media screen and (max-width: 700px) {

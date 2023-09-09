@@ -11,7 +11,6 @@ const StyledSlideContainer = styled.div`
     position: relative;
 
     @media screen and (max-width: 767px) {
-      /* bottom: 5%; */
       position: fixed;
       background-color: rgba(23, 23, 23); 
       margin-top: 10em;
@@ -31,7 +30,6 @@ const StyledArrowsContainer = styled.div`
     z-index: 99;
 
     @media screen and (max-width: 767px) {
-      /* bottom: 5%; */
       top: 25%;
       transform: translateY(-25%);
     }
@@ -42,25 +40,28 @@ const StyledArrowBackground = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.6);
-    width: 50px;
+    height: 30px;
+    /* background: rgba(255, 255, 255, 0.3); */
+    width: 30px;
     margin: 20px;
     border: none;
     text-align: center;
     border-radius: 50%;
+    cursor: pointer;
 `;
 
 const StyledLeftArrow = styled.a`
     font-size: 25px;
     margin-top: 7px;
     margin-right: 3px;
+    color: whitesmoke;
 `;
 
 const StyledRightArrow = styled.a`
     font-size: 25px;
     margin-top: 7px;
     margin-left: 3px;
+    color: whitesmoke;
 `;
 
 const StyledDesktopContainer = styled.div`

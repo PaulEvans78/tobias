@@ -125,14 +125,14 @@ const IconContainer = styled.div`
   margin-right: 2em;
 
   @media screen and (max-width: 960px) {
-        margin-right: 2em;
+        /* margin-right: 2em; */
 
     }
 
     
 
 @media screen and (max-width: 767px) {
-  margin-right: 0em;
+  margin-right: 1em;
 }
 `;
 
@@ -149,7 +149,7 @@ const StyledIcon = styled.a`
     }
 
     @media screen and (max-width: 767px) {
-    margin-left: 0em;
+    margin: 0em 2em 0em 2em;
 
     &:hover{
         text-decoration: none;

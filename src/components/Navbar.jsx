@@ -57,10 +57,10 @@ const StyledImgContainer = styled.div `
 
 const StyledImg = styled.img`
         text-align: center;
-        width: 60px; 
+        width: 65px; 
         margin-left: 1em;
         margin-right: 1em;
-        margin-top: 1em;
+        margin-top: 0.75em;
         padding-bottom: 0.75em;
 
     /* &:hover{

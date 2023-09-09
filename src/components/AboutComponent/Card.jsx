@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { StyledAboutMainContainer, StyledImgContainer, StyledAboutImg, StyledHContainer, StyledMobContainer, StyledInfoContainer, Styledp, Styledh2, StyledTypewriter, StyledAboutImgContainer, StyledAboutSmallImages, StyledButton, StyledButtonBackground, StyledCopyRightContainer, StyledCopyRight } from './styles';
+import React from 'react';
+import { StyledAboutMainContainer, StyledImgContainer, StyledAboutImg, StyledHContainer, StyledMobContainer, StyledInfoContainer, Styledp, Styledh2, StyledTypewriter, StyledAboutImgContainer, StyledAboutSmallImages, StyledCopyRightContainer, StyledCopyRight } from './styles';
 import { useTypewriter } from 'react-simple-typewriter';
 import { Fade } from "react-awesome-reveal";
-import {SlArrowDown} from 'react-icons/sl';
+
 
 
 
@@ -20,57 +20,11 @@ function Card (props) {
    });
 
 
-   
-   const section1 = useRef();
-   const section2 = useRef();
-   const section3 = useRef();
-   const section4 = useRef();
-   
-
-   
-
-   const [currentSection, setCurrentSection] = useState(1);
-
-   const sections = [section1, section2, section3, section4];
-
-useEffect(() => {
-    const handleScroll = () => {
-      for (let i = 0; i < sections.length - 1; i++) {
-        if (
-          sections[i].current &&
-          sections[i + 1].current &&
-          window.scrollY >= sections[i].current.offsetTop &&
-          window.scrollY < sections[i + 1].current.offsetTop
-        ) {
-          setCurrentSection(i + 1);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }, [sections]);
-  
-    const scrollToSection = () => {
-        console.log("Button clicked. scrollToSection called.");
-        if (sections[currentSection] && sections[currentSection].current) {
-          sections[currentSection].current.scrollIntoView({ behavior: "smooth" });
-        } else {
-            console.error(`Section ${currentSection + 1} or its ref is missing.`);
-          }
-      };
-
-      const isLastSection = currentSection === sections.length - 1;
-
     return (
      
         <StyledAboutMainContainer>
-            <div >       
-            <StyledImgContainer ref={section1}>
+                  
+            <StyledImgContainer >
             
                 <StyledAboutImg src={props.mainPic} alt="Tobias Reiner"/>
 
@@ -83,11 +37,11 @@ useEffect(() => {
             <StyledMobContainer>
                     <Styledh2>About</Styledh2>
             </StyledMobContainer>
-            </div>
+            
     
                     <Fade>
-                        <div>
-                        <StyledInfoContainer ref={section2}>
+                        
+                        <StyledInfoContainer >
                         
 
                         <StyledTypewriter>
@@ -112,40 +66,31 @@ useEffect(() => {
                             
 
                         </StyledInfoContainer>
-                        </div>
+                        
                     </Fade> 
 
                     <Fade>
-                    <div >
-                        <StyledAboutImgContainer ref={section3}>
+                    
+                        <StyledAboutImgContainer >
 
                             <StyledAboutSmallImages src={props.PicOne} alt="Tobias Reiner"/>
                             <StyledAboutSmallImages src={props.PicTwo} alt="Tobias Reiner"/>
                             <StyledAboutSmallImages src={props.PicThree} alt="Tobias Reiner"/>
 
                         </StyledAboutImgContainer>
-                        </div>
+                        
                     </Fade>
                    
                   
 
-<StyledCopyRightContainer ref={section4}>
+                    <StyledCopyRightContainer >
 
-              <StyledCopyRight>Copyright 2023</StyledCopyRight>
-              <StyledCopyRight>Paul Evans</StyledCopyRight>
-              <StyledCopyRight>Creative</StyledCopyRight>
+                            <StyledCopyRight>Copyright 2023</StyledCopyRight>
+                            <StyledCopyRight>Paul Evans</StyledCopyRight>
+                            <StyledCopyRight>Creative</StyledCopyRight>
 
-          </StyledCopyRightContainer>
+                    </StyledCopyRightContainer>
 
-          {!isLastSection && (
-                    <StyledButtonBackground>
-
-                        <StyledButton >
-                            <SlArrowDown onClick={scrollToSection} />
-                        </StyledButton>
-
-                    </StyledButtonBackground>               
-                )}
                 
         </StyledAboutMainContainer>
     );

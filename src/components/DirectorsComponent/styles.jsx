@@ -14,7 +14,6 @@ export  const StyledImgContainer = styled.div`
     justify-content: flex-end;
     align-items: center;
     max-width: 100vw; 
-    /* max-height: 100vw; */
 `;
 
 export  const StyledDirectorsImg = styled.img`
@@ -90,7 +89,7 @@ export  const StyledInfoContainer = styled.div`
     font-size: 16px;
     line-height: 2rem;
     overflow: hidden;
-    margin-bottom: 8em;
+    margin-bottom: 14em;
     scroll-snap-align: center;
     
 
@@ -112,47 +111,3 @@ export  const Styledp = styled.p`
     text-align: left;
 `;
 
-export const StyledSection = styled.div`
-    max-width: 100vw;
-    min-width: 100vw;
-    max-height: 200px;
-`;
-
-export const StyledButtonBackground = styled.div`
-    position: fixed;
-    /* left: 47%; */
-    bottom: 65px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-self: center;
-    justify-content: center;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.8);
-    width: 60px;
-    margin: 20px;
-    border: none;
-    text-align: center;
-    border-radius: 50%;
-
-    @media screen and (max-width: 767px) {
-        display: none;
-    }
-`;
-
-export const StyledButton = styled.a`
-    text-align: center;
-    height: 80px;
-    /* border-radius: 50%; */
-    /* left: 48%;
-    bottom: 50px; */
-    font-size: 2em;
-    z-index: 1;
-    cursor: pointer;
-    color: black;
-    margin-top: 1em;
-
-    @media screen and (max-width: 767px) {
-        display: none;
-    }
-`;
