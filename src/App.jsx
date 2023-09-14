@@ -8,6 +8,7 @@ import Experience from "./pages/Experience";
 import About from "./pages/About";
 
 import {
+  HashRouter,
   BrowserRouter as Router,
   Route,
   Switch
@@ -32,44 +33,44 @@ justify-content: space-evenly;
 function App() {
   
   return (
+    <HashRouter>
+        {/* <Router> */}
 
-    <Router>
+          <GridContainer >
 
-      <GridContainer >
-
-          <Navbar />
-      
-            <MainContainer>
-
+              <Navbar />
           
-              <Switch>
+                <MainContainer>
 
-                <Route exact path="/">
-                  <Home />
-                </Route>
+              
+                  <Switch>
 
-                <Route path="/directors">
-                  <Directors />
-                </Route>
+                    <Route exact path="/">
+                      <Home />
+                    </Route>
 
-                <Route path="/experience">
-                  <Experience />
-                </Route>
+                    <Route path="/directors">
+                      <Directors />
+                    </Route>
 
-                <Route path="/about">
-                  <About />
-                </Route>
+                    <Route path="/experience">
+                      <Experience />
+                    </Route>
 
-              </Switch>
+                    <Route path="/about">
+                      <About />
+                    </Route>
 
-                </MainContainer>
+                  </Switch>
 
-                  <Footer />
-                
-      </GridContainer>
-      
-    </Router>
-   
+                    </MainContainer>
+
+                      <Footer />
+                    
+          </GridContainer>
+          
+        {/* </Router> */}
+    </HashRouter>
   );
 }
 

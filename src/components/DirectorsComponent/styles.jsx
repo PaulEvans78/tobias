@@ -14,6 +14,7 @@ export  const StyledImgContainer = styled.div`
     justify-content: flex-end;
     align-items: center;
     max-width: 100vw; 
+    min-width: 100vw;
 `;
 
 export  const StyledDirectorsImg = styled.img`

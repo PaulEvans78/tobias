@@ -3,6 +3,7 @@ import axios from 'axios';
 import Card from '../Card';
 
 
+
 const DirectorsList = () => {
     const [directorslistData, setDirectorsListData] = useState([])
     

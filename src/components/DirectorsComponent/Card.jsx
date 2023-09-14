@@ -4,7 +4,6 @@ import { Fade } from "react-awesome-reveal";
 
 
 
-
 function Card (props) {
 
 

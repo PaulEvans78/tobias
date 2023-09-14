@@ -97,20 +97,19 @@ const divStyle = {
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
     height: '100vh',
-    // transition: 'ease 3000ms',
-    // WebkitTransition: 'ease 3000ms',
-  }
+    // transition: '0.6s ease-out',
+    // WebkitTransition: ' 0.6s ease-in-out', // Safari and Chrome
+    // MozTransition: ' 0.6s ease-in-out', // Firefox
+    // OTransition: ' 0.6s ease-in-out', // Opera
+    // msTransition: ' 0.6s ease-in-out', // Microsoft Edge
+  };
 
-  // const divMobStyle = {
-  //   display: 'flex',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   backgroundSize: 'cover',
-  //   backgroundPosition: 'center center',
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundAttachment: 'fixed',
-  //   width: '10px',
-  // }
+  // Add specific styling for Safari
+// const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+// if (isSafari) {
+//     divStyle.WebkitTransition = ' 0.6s ease-in-out';
+// }
+
 
   const slideImages = [
     {
