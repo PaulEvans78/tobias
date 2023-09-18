@@ -50,9 +50,9 @@ function Card (props) {
                         
 
                                
-                                <Styledp>Having done this job for over twenty years now I am still attracted by the vibrant pulse. 
-                                    Every project is a new constellation of people, new visions to be fulfilled, new budgetary challenges to be met, new places to discover  
-                                    - each one comes with their own particular set of challenges – this is what intrigues me….making ends meet!
+                                <Styledp>Having spent more than 1000 shooting days on set I am still very much attracted by the vibrant pulse. 
+                                    Every project – large or small -  is a new constellation of people, new visions to be fulfilled, new budgetary challenges to be met, 
+                                    new creative places to discover - each one comes with their own particular set of challenges – this is what intrigues me…. making ends meet!
                                 </Styledp>
 
                                 <Styledp>Over and over again trying to break that creative glass ceiling against the never ending ticking of the budgetary clock… 

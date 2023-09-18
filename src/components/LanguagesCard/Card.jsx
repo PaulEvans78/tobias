@@ -24,7 +24,14 @@ function Card (props) {
 
                         <Fade>
                             <StyledInfoContainer>
-                                <StyledCardp>{props.description}</StyledCardp>
+                                <StyledCardp>
+                                    <span className="strong">SWEDISH, </span>
+                                    <span className="light">ENGLISH, </span>
+                                    <span className="strong">GERMAN, </span>
+                                    <span className="light">FRENCH, </span>
+                                    <span className="strong">NORWEGIAN, </span>
+                                    <span className="light">DANISH</span>
+                                </StyledCardp>
                             </StyledInfoContainer>
                         </Fade>
                         

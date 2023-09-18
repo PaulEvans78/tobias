@@ -14,8 +14,7 @@
         {   
             "id":"2",
             "mainPic": "experience/situationImg.jpg",
-            "headline": "Situations",
-            "description": "COMMERCIALS, FEATURE FILM , MUSIC VIDEOS, CELLULOID FILM, ACTORS & CELEBRITIES, AMATEURS, KIDS, LARGE CROWDS, SPORTS, ANIMALS, STUNT, PYROTECHNICS, FIREARMS & EXPLOSIVES, 360*VR, MOTION CONTROL, MULTICAMERA, 3D, PROJECTION, LED WALL, VFX, MOTION CAPTURE, INFRARED, AERIAL, DRONE & HELICOPTERS, UNDER WATER, JUNGLE, ARCTIC, OCEAN, MILITARY, EQUESTRIAN, AUTOMOBILES, REVEAL PROTOTYPES, -30*C -> +40*C,  HUNGRY CREW"
+            "headline": "Situations"
             
         }
     ],
@@ -25,8 +24,7 @@
         {   
             "id":"3",
             "mainPic": "experience/countriesImg.jpg",
-            "headline": "Countries",
-            "description": "EUROPE: SWEDEN, NORWAY, FINLAND, ESTONIA, DENMARK, GREENLAND, ICELAND; FARØER ISLANDS, GERMANY, FRANCE, SWITZERLAND, ROMANIA, HUNGARY, GREECE, SPAIN, BALEARIC ISLANDS, ITALY, PORTUGAL, AFRICA: SOUTH AFRICA, AMERICA: USA, URUGUAY ASIA: THAILAND,"
+            "headline": "Countries"
                 
         }
     
@@ -37,8 +35,7 @@
         {   
             "id":"4",
             "mainPic": "experience/languagesImg.jpg",
-            "headline": "Languages",
-            "description": "SWEDISH, ENGLISH, GERMAN, FRENCH, NORWEGIAN, DANISH"
+            "headline": "Languages"
                 
         }
     
@@ -49,8 +46,7 @@
         {   
             "id":"5",
             "mainPic": "experience/brandsImg.jpg",
-            "headline": "Automobile",
-            "description": "AUDI, BMW, CITRÖEN, FIAT, FORD, GENESIS, HYUNDAI, JAGUAR, LAND ROVER, LEXUS, MERCEDES AMG, MINI, POLESTAR, PORSCHE, RENAULT, SAAB, TOYOTA, VOLKSWAGEN, VOLVO"
+            "headline": "Automobile"
                     
         }
         
