@@ -162,7 +162,54 @@ const divStyle = {
     },
     {
       src: '/slideshow/img17.jpg',
+    },
+    {
+      src: '/slideshow/img18.jpg',
+    },
+    {
+      src: '/slideshow/img19.jpg',
+    },
+    {
+      src: '/slideshow/img20.jpg',
+    },
+    {
+      src: '/slideshow/img21.jpg',
+    },
+    {
+      src: '/slideshow/img22.jpg',
+    },
+    {
+      src: '/slideshow/img23.jpg',
+    },
+    {
+      src: '/slideshow/img24.jpg',
+    },
+    {
+      src: '/slideshow/img25.jpg',
+    },
+    {
+      src: '/slideshow/img26.jpg',
+    },
+    {
+      src: '/slideshow/img27.jpg',
+    },
+    {
+      src: '/slideshow/img28.jpg',
+    },
+    {
+      src: '/slideshow/img29.jpg',
+    },
+    {
+      src: '/slideshow/img30.jpg',
+    },
+    {
+      src: '/slideshow/img31.jpg',
+    },
+    {
+      src: '/slideshow/img32.jpg',
     }
+
+    
   ];
   
   const Slideshow = () => {
@@ -173,7 +220,7 @@ const divStyle = {
         setCurrentIndex((prevIndex) =>
           prevIndex === slideImages.length - 1 ? 0 : prevIndex + 1
         );
-      }, 4000);
+      }, 3000);
   
       return () => clearInterval(timer);
     }, []);
